@@ -5,7 +5,7 @@ export default function StoriesScreen() {
   return (
     <View>
         <Text>
-            StoriesScreen
+            Maybe profile page here
         </Text>
     </View>
   )
