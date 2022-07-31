@@ -56,6 +56,14 @@ export default function CameraOptions({ flipCamera, switchFlash }) {
           color="white"
         />
       </TouchableOpacity>
+      <TouchableOpacity>
+        <Ionicons
+          style={styles.nightModeIcon}
+          name="ios-sun-outline"
+          size={30}
+          color="white"
+        />
+      </TouchableOpacity>
     </View>
   );
 }

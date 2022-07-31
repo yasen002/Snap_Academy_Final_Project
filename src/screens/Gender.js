@@ -5,7 +5,6 @@ import { View,
   Image,
   StyleSheet,
   ScrollView,
-  Button,
   Animated} from 'react-native'
 import {useFonts} from 'expo-font';
 import {BANNER_H} from '../../constants';
@@ -17,7 +16,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 
 
-export default function SpotlightScreen({navigation}) {
+export default function Gender({navigation}) {
   const [loaded] = useFonts({
 		Avenir: require('../../fonts/AvenirNextLTPro-Bold.otf'),
 	  });
@@ -33,7 +32,7 @@ export default function SpotlightScreen({navigation}) {
         scrollEventThrottle={16}
       >
         <View style={styles.bannerContainer}>
-          <Text style={styles.title}> My Identity</Text>
+          <Text style={styles.title}> part 2</Text>
           <Animated.Image
             style={styles.banner(scrollA)}
             source={require('../../assets/bitmoji2.png')}
@@ -41,9 +40,8 @@ export default function SpotlightScreen({navigation}) {
         </View>
           <View style={styles.bannerContainer2}>
               <View style={styles.parent}>
-                  <CButton text={"Sexuality"}/>
+                  <CButton text={"Sexuality"} />
                   <CButton text={"Gender"} />
-                  {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
                   <CButton text={"Ethnicity"} />
               </View>
             

@@ -1,3 +1,4 @@
+// LOG IN SCREEN FOR SNAPCHAT 
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
