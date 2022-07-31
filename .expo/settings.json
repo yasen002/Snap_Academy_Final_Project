@@ -1,14 +1,10 @@
 {
-  "hostType": "tunnel",
+  "scheme": null,
+  "hostType": "lan",
   "lanType": "ip",
+  "devClient": false,
   "dev": true,
   "minify": false,
-<<<<<<< HEAD
-  "urlRandomness": "if-wnu",
-=======
-  "urlRandomness": "jh-hqs",
->>>>>>> refs/remotes/origin/main
-  "https": false,
-  "scheme": null,
-  "devClient": false
+  "urlRandomness": null,
+  "https": false
 }

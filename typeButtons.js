@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   text: {
-    fontSize: 1,
+    fontSize: 15,
     color: "black",
     textAlign: "center",
     fontWeight: "bold",

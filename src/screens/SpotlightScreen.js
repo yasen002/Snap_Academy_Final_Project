@@ -46,6 +46,8 @@ export default function SpotlightScreen({navigation}) {
                   {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
                   <CButton text={"Ethnicity"} />
               </View>
+              
+              
             
               <View style={styles.parent}>
                 <MButton text={"Woman"}

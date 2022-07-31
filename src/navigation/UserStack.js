@@ -98,7 +98,6 @@ export default function UserStack() {
           component={SpotlightScreen}
           options={{screenOptions, headerShown:false,tabBarShowLabel: false}}
         />
-        <Tab.Screen name="ScreenSpotlight" component={SpotlightScreen} />
         <Tab.Screen name="Gender" component={Gender} />
       </Tab.Navigator>
     </NavigationContainer>
