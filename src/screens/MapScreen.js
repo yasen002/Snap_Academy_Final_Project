@@ -4,14 +4,17 @@ import {
   StyleSheet,
   View,
   Dimensions,
-  Image,
-  Text,
   TouchableOpacity,
 } from "react-native";
+
+
 
 import * as Location from "expo-location";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
+import StatBar from "../components/StatBar";
+import PlacesBitmoji from "../components/MapScreen/PlacesBitmoji";
+
 
 export default function MapScreen({ navigation }) {
   const [location, setLocation] = useState(null);
@@ -24,14 +27,16 @@ export default function MapScreen({ navigation }) {
     longitudeDelta: 0.0421,
   });
 
+
+  //Set location
   useEffect(() => {
     (async () => {
+     try {
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
         setErrorMsg("Permission to access location was denied");
         return;
       }
-
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
       setCurrentRegion({
@@ -39,15 +44,17 @@ export default function MapScreen({ navigation }) {
         longitude: location.coords.longitude,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
-      });
+      }); 
+     } catch (error) {
+      console.log("MapScreen.js error: ", error)
+     }
     })();
   }, []);
 
-  let text = "Waiting...";
-  text = JSON.stringify(location);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.screenContainer}>
+    <StatBar/>
       <MapView
         style={styles.map}
         region={currentRegion}
@@ -66,45 +73,27 @@ export default function MapScreen({ navigation }) {
           <Ionicons name="ios-navigate" size={15} color="black" />
         </TouchableOpacity>
       </View>
-      <View style={styles.bitmojiContainer}>
-        <View style={styles.myBitmoji}>
-          <Image
-            style={styles.bitmojiImage}
-            source={require("../../assets/snapchat/personalBitmoji.png")}
-          />
-          <View style={styles.bitmojiTextContainer}>
-            <Text style={styles.bitmojiText}>My Bitmoji</Text>
-          </View>
-        </View>
-        <View style={styles.places}>
-          <Image
-            style={styles.bitmojiImage}
-            source={require("../../assets/snapchat/personalBitmoji.png")}
-          />
-          <View style={styles.bitmojiTextContainer}>
-            <Text style={styles.bitmojiText}>Places</Text>
-          </View>
-        </View>
-        <View style={styles.myFriends}>
-          <Image
-            style={styles.bitmojiImage}
-            source={require("../../assets/snapchat/personalBitmoji.png")}
-          />
-          <View style={styles.bitmojiTextContainer}>
-            <Text style={styles.bitmojiText}>Friends</Text>
-          </View>
-        </View>
-      </View>
+     <PlacesBitmoji/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screenContainer: {
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  statusBar:{
+    width: "100%",
+    height: 50,
+    backgroundColor:"red",
+    position: "absolute",
+    top:40,
+
+    zIndex:100
+
   },
   map: {
     width: Dimensions.get("window").width,

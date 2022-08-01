@@ -29,7 +29,7 @@ export default function ChatStack({ navigation }) {
             })
             .catch((error) => {
               // An error happened.
-              // should we do something with that error??
+              console.log("ChatStack.js: ", error);
             });
         }}
         title="Log Out"
