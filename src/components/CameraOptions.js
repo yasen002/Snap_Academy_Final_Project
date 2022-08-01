@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -56,14 +56,7 @@ export default function CameraOptions({ flipCamera, switchFlash }) {
           color="white"
         />
       </TouchableOpacity>
-      <TouchableOpacity>
-        <Ionicons
-          style={styles.nightModeIcon}
-          name="ios-sun-outline"
-          size={30}
-          color="white"
-        />
-      </TouchableOpacity>
+     
     </View>
   );
 }
