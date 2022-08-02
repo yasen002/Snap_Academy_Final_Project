@@ -19,22 +19,7 @@ export default function ChatStack({ navigation }) {
 
   let screenOptions = {
     tabBarShowLabel: false,
-    headerLeft: () => (
-      <Button
-        onPress={() => {
-          signOut(auth)
-            .then(() => {
-              // Sign-out successful.
-              user = null;
-            })
-            .catch((error) => {
-              // An error happened.
-              console.log("ChatStack.js: ", error);
-            });
-        }}
-        title="Log Out"
-      />
-    ),
+    headerShown: false,
   };
 
   return (

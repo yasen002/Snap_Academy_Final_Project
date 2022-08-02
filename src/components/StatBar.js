@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View,Text , Image, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export default function StatBar({ navigation, returnName }) {
+export default function StatBar({ screen="camera" }) {
 const myIcon = <Icon name="rocket" size={30} color="#900" />;
 
   return (
@@ -13,10 +13,29 @@ const myIcon = <Icon name="rocket" size={30} color="#900" />;
         source={require("../../assets/snapchat/personalBitmoji.png")} //<i class="fa-solid fa-magnifying-glass"></i>
       />
     </View>
-    
   <View style={styles.iconContainer} >
     <Icon name="search" size={15} color="#ffffff" />
   </View>
+
+  {/* Different titles for different screensx */}
+  {screen==="map"&&<View style={styles.barTitle} >
+    <Text style={styles.barTitleText} >Map</Text>
+  </View>
+  }
+
+  {screen==="chat"&&<View style={styles.barTitle} >
+      <Text style={styles.barTitleText} >Chat</Text>
+    </View>
+  }
+  {screen==="story"&&<View style={styles.barTitle} >
+      <Text style={styles.barTitleText} >Stories</Text>
+    </View>
+  }
+  {screen==="spotlight"&&<View style={styles.barTitle} >
+      <Text style={styles.barTitleText} >Spotlight</Text>
+    </View>
+  }
+
   </View>
   );
 }
@@ -49,6 +68,19 @@ const styles = StyleSheet.create({
     backgroundColor:"rgba(104,104,104, 0.55)",
     borderRadius:35,
     marginLeft:10,
+  },
+  barTitle:{
+    width:150,
+    height:40,
+    backgroundColor:"rgba(104,104,104, 0.55)",
+    marginLeft:10,
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center", 
+    borderRadius:35,
+  },
+  barTitleText:{
+    textAlign:"center"
   }
 });
 

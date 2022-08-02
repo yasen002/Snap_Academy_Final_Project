@@ -5,6 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 import db from "../../firebase";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
+import StatBar from "../components/StatBar";
 
 export default function ChatScreen({ navigation }) {
   const [users, setUsers] = useState([]);
@@ -22,6 +23,10 @@ export default function ChatScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <View style={{ height:93}}>
+        <StatBar screen="chat" static='true' />
+      </View>
+      <Text>Hi from chat</Text>
       {users?.map((user) => {
         return (
           <TouchableOpacity
