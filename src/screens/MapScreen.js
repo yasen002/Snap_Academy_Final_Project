@@ -39,12 +39,18 @@ export default function MapScreen({ navigation }) {
       }
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
+      console.log("location is : ", location)
       setCurrentRegion({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       }); 
+
+
+      setLocation(regionName);
+      console.log(regionName, 'nothing');
+
      } catch (error) {
       console.log("MapScreen.js error: ", error)
      }
@@ -54,7 +60,7 @@ export default function MapScreen({ navigation }) {
 
   return (
     <View style={styles.screenContainer}>
-    <StatBar/>
+    <StatBar screen="map" />
       <MapView
         style={styles.map}
         region={currentRegion}

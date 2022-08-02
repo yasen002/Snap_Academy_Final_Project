@@ -1,20 +1,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Button } from "react-native";
-
 import { getAuth, signOut } from "firebase/auth";
-
 // Screens
 import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
 import StoriesScreen from "../screens/StoriesScreen";
 import SpotlightScreen from "../screens/SpotlightScreen";
-import Gender from "../screens/Gender";
-
-
 // Stacks
 import ChatStack from "./ChatStack";
 
@@ -36,7 +30,7 @@ export default function UserStack() {
             })
             .catch((error) => {
               // An error happened.
-              // should we do something with that error??
+              console.log("UserStack.js Error: ", error)
             });
         }}
         title="Log Out"
@@ -82,7 +76,10 @@ export default function UserStack() {
         options={{...screenOptions, headerShown: false}} />
         <Tab.Screen 
         name="ChatStack" component={ChatStack} 
-        options={{ headerShown: false, tabBarShowLabel: false }} />
+        // options={{ headerShown: false, tabBarShowLabel: false }}
+        // options={{...screenOptions, headerShown: false}} 
+        options={{...screenOptions, headerShown: false}}
+         />
         <Tab.Screen
           name="Camera"
           component={CameraScreen}
@@ -91,14 +88,13 @@ export default function UserStack() {
         <Tab.Screen
           name="Stories"
           component={StoriesScreen}
-          options={screenOptions}
+          options={{...screenOptions,  headerShown: false}}
         />
         <Tab.Screen
           name="Spotlight"
           component={SpotlightScreen}
           options={{screenOptions, headerShown:false,tabBarShowLabel: false}}
         />
-        {/* <Tab.Screen name="Gender" component={Gender} /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );

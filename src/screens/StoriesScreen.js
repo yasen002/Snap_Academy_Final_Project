@@ -1,24 +1,7 @@
-// import React from 'react'
-// import { View, Text } from 'react-native'
-
-// export default function StoriesScreen() {
-//   return (
-//     <View>
-//         <Text>
-//             Maybe profile page here
-//         </Text>
-//     </View>
-//   )
-// }
 import React, { useRef } from 'react';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import { RNCamera } from 'react-native-camera';
+import { View, Text, StyleSheet, } from 'react-native'
+import StatBar from '../components/StatBar'
+import { RNCamera , SafeAreaView, TouchableOpacity,} from 'react-native-camera';
 
 const StoriesScreen = () => {
   const cameraRef = useRef(null);
@@ -31,26 +14,18 @@ const StoriesScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeWrapper}>
-      <View style={styles.container}>
-        <RNCamera
-          ref={cameraRef}
-          style={styles.camera}
-          type={RNCamera.Constants.Type.back}
-          flashMode={RNCamera.Constants.FlashMode.on}
-          captureAudio={false}
-
-        />
-        <View style={styles.snapWrapper}>
-          <TouchableOpacity onPress={takePicture} style={styles.capture}>
-            <Text style={styles.snapText}>SNAP</Text>
-            
-          </TouchableOpacity>
+      <View>
+        <View style={{ height:93}}>
+          <StatBar screen="story" />
         </View>
+        
+        <Text>
+          Stories Page
+        </Text>
       </View>
-    </SafeAreaView>
-  );
-};
+  )
+}
+
 
 const styles = StyleSheet.create({
   safeWrapper: {
