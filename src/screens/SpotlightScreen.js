@@ -28,90 +28,10 @@ export default function SpotlightScreen({navigation}) {
     const scrollA = useRef(new Animated.Value(0)).current;
 
   return (
-<<<<<<< HEAD
-    <View style={styles.container}>
-    <Animated.ScrollView
-        onScroll={Animated.event(
-          [{nativeEvent: {contentOffset: {y: scrollA}}}],
-          {useNativeDriver: true},
-        )}
-        scrollEventThrottle={16}
-      >
-        <View style={styles.bannerContainer}>
-          <Text style={styles.title}> Identity</Text>
-          <Animated.Image
-            style={styles.banner(scrollA)}
-            source={require('../../assets/bitmoji2.png')}
-          />
-        </View>
-          <View style={styles.bannerContainer2}>
-       
-          <CButton text={"Gender"}  />
-          <View position='absolute' top={-30} right={80} bottom={30}>
-          <TouchableOpacity position='relative' top={-100}  >
-                      <Ionicons 
-                        name="information-circle-outline"
-                        size={45}
-                        color="black"
-                        />
-                  </TouchableOpacity>
-                  </View>
-
-              <View alignItems="center" style={styles.parent}>
-                  <SButton text={"Sexuality"}/>
-                  <DButton text={"Display to Profile"} />
-                  {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
-              </View>
-              
-              
-            
-              {/* <View style={styles.parent}>
-                <MButton text={"Woman"}
-                sub={"she/her"}
-                />
-              </View> */}
-              {/* <Text style={styles.miniHeader}> 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-              semper turpis. Ut in fringilla nisl, sit amet aliquet urna. Donec
-              sollicitudin libero sapien, ut accumsan justo venenatis et. Proin iaculis
-              ac dolor eget malesuada. Cras commodo, diam id semper sodales, tortor leo
-              suscipit leo, vitae dignissim velit turpis et diam. 
-              </Text> */}
-              <View flexDirection="row" justifyContent='center' paddingTop={10} >
-                <View marginRight={30}>
-                  <TouchableOpacity>
-                      <Ionicons
-                        name="ios-camera-outline"
-                        size={30}
-                        color="black"
-                      />
-                  </TouchableOpacity>
-                  </View>
-
-                  <View marginRight={30}>
-                  <TouchableOpacity >
-                      <Ionicons
-                       paddingRight={30}
-                        name="ios-pencil-outline"
-                        size={30}
-                        color="black"
-                      />
-                  </TouchableOpacity>
-                  </View>
-                  <TouchableOpacity >
-                      <Ionicons
-                        name="ios-people-outline"
-                        size={30}
-                        color="black"
-                      />
-                  </TouchableOpacity>
-
-              </View>
-
-              <Text style={styles.title}>Identity is...</Text>
-=======
     <View>
-      <StatBar screen='spotlight' box='true' />
+      <View style={{ height:93}}>
+        <StatBar screen="map" navigation={navigation} />
+      </View>
       <Text>Hello form Stories</Text>
     </View>
     // <View style={styles.container}>
@@ -175,7 +95,6 @@ export default function SpotlightScreen({navigation}) {
     //               </TouchableOpacity>
 
     //           </View>
->>>>>>> 961d2f0c6ef609fea19f6a9a72d3e38fd04db2d6
                   
             
     //       </View>
