@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
     //padding: 18,
     width: "75%",
     height: 100,
-    borderRadius: 40,
+    borderRadius: 50,
     justifyContent:"center",
     alignItems:"center",
     alignContent:"center",
+    
   },
   text: {
     fontSize: 40,

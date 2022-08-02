@@ -1,9 +1,7 @@
-
-
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-const CButton = ({ text }) => {
+const SButton = ({ text }) => {
   return (
     <TouchableOpacity style={styles.button}>
       <Text style={styles.text}>{text}</Text>
@@ -14,19 +12,18 @@ const CButton = ({ text }) => {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: "yellow",
-    padding: 23,
-    width: "50%",
-    height: 70,
-    borderRadius: 20,
-    position: 'relative',
-    top: -20,
+    marginRight: 5, // space between the yellow and pink button 
+    padding: 16,
+    width: "30%",
+    height: 50,
+    borderRadius: 20, //20
     
   },
   text: {
-    fontSize: 25,
+    fontSize: 15,
     color: "black",
     textAlign: "center",
     fontWeight: "bold",
   },
 });
-export default CButton;
+export default SButton;
