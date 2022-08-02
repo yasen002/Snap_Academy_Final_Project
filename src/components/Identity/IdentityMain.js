@@ -1,11 +1,3 @@
-// import React from 'react'
-// import { View, Text } from 'react-native'
-// export default function IdentityMain() {
-//   return (
-//     <View><Text>Hi from spot lightsFlkjsf;lsdjf;lasfjs;lfjsflsjf;skj;asfjsa;fHi from spot lightsFlkjsf;lsdjf;lasfjs;lfjsflsjf;skj;asfjsa;fHi from spot lightsFlkjsf;lsdjf;lasfjs;lfjsflsjf;skj;asfjsa;fHi from spot lightsFlkjsf;lsdjf;lasfjs;lfjsflsjf;skj;asfjsa;fHi from spot lightsFlkjsf;lsdjf;lasfjs;lfjsflsjf;skj;asfjsa;fHi from spot lightsFlkjsf;lsdjf;lasfjs;lfjsflsjf;skj;asfjsa;fHi from spot lightsFlkjsf;lsdjf;lasfjs;lfjsflsjf;skj;asfjsa;fHi from spot lightsFlkjsf;lsdjf;lasfjs;lfjsflsjf;skj;asfjsa;f</Text></View>
-//   )
-// }
-
 import React, {useRef} from 'react'
 import { View, 
   Text,
@@ -13,7 +5,8 @@ import { View,
   Image,
   StyleSheet,
   Animated,
-  Linking
+  Linking,
+  Button
 } from 'react-native'
 import Swiper from "react-native-web-swiper";
 import {useFonts} from 'expo-font';
@@ -30,6 +23,7 @@ export default function IdentityMain({navigation}) {
     const scrollA = useRef(new Animated.Value(0)).current;
 
   return (
+    
     <Swiper>
     <View style={styles.container}>
     <Animated.ScrollView
@@ -156,7 +150,7 @@ export default function IdentityMain({navigation}) {
     
           <View style={styles.bannerContainer2}>
        
-          <CButton text={"Sexuality"}  />
+          <CButton text={"Pronouns"}  />
           <View position='absolute' top={-30} right={80} bottom={30}>
           <TouchableOpacity position='relative' top={-100}  >
                       <Ionicons 
@@ -264,7 +258,7 @@ export default function IdentityMain({navigation}) {
     
           <View style={styles.bannerContainer2}>
        
-          <CButton text={"Pronouns"}  />
+          <CButton text={"Sexuality"}  />
           <View position='absolute' top={-30} right={80} bottom={30}>
           <TouchableOpacity position='relative' top={-100}  >
                       <Ionicons 
@@ -276,7 +270,7 @@ export default function IdentityMain({navigation}) {
                   </View>
 
               <View alignItems="center" style={styles.parent}>
-                  <SButton text={"She/Her"}/>
+                  <SButton text={"Bisexual"}/>
                   {/* <DButton text={"Display to Profile"} /> */}
                   {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
               </View>
@@ -349,6 +343,214 @@ export default function IdentityMain({navigation}) {
            </View>
        </Animated.ScrollView>
      </View>
+
+           {/* ETHNICITY */}
+
+           <View style={styles.container}>
+    <Animated.ScrollView
+        onScroll={Animated.event(
+          [{nativeEvent: {contentOffset: {y: scrollA}}}],
+          {useNativeDriver: true},
+        )}
+        scrollEventThrottle={16}
+      >
+        <View style={styles.bannerContainer}>
+          <Text style={styles.title}> My Identities</Text>
+          <Animated.Image
+            style={styles.banner(scrollA)}
+            source={require('../../../assets/bitmoji2.png')}
+          />
+        </View>
+    
+          <View style={styles.bannerContainer2}>
+       
+          <CButton text={"Ethnicity"}  />
+          <View position='absolute' top={-30} right={80} bottom={30}>
+          <TouchableOpacity position='relative' top={-100}  >
+                      <Ionicons 
+                        name="information-circle-outline"
+                        size={45}
+                        color="black"
+                        />
+                  </TouchableOpacity>
+                  </View>
+
+              <View alignItems="center" style={styles.parent}>
+                  <SButton text={"Black"}/>
+                  {/* <DButton text={"Display to Profile"} /> */}
+                  {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
+              </View>
+              
+    
+              <View flexDirection="row" justifyContent='center' paddingTop={10} >
+                <View marginRight={30}>
+                  <TouchableOpacity>
+                      <Ionicons
+                        name="ios-camera-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+                  </View>
+
+                  <View marginRight={30}>
+                  <TouchableOpacity >
+                      <Ionicons
+                       paddingRight={30}
+                        name="ios-pencil-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+                  </View>
+                  <TouchableOpacity >
+                      <Ionicons
+                        name="ios-people-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+
+              </View>
+
+              <Text style={styles.title}> I love me, myself, and I </Text>
+              
+              
+              <Image
+              source={require('../../../assets/sticker.png')}
+              style={styles.templateLeft}>
+              </Image>
+
+              <Image
+              source={require('../../../assets/sticker.png')}
+              style={styles.templateRight}>
+              </Image>
+
+              <Image
+              source={require('../../../assets/sticker.png')}
+              style={styles.templateLeft}>
+              </Image>
+              <Image
+              source={require('../../../assets/sticker.png')}
+              style={styles.templateRight}>
+              </Image>
+
+              <View paddingTop={300} justifyContent="center" alignItems="center">
+              <Text >Learn more about identities</Text>
+              <Text style={{color: 'orange'}}
+              onPress={() => Linking.openURL('http://google.com')}>
+              Google
+            </Text>
+            <Text style={{color: 'orange'}}
+              onPress={() => Linking.openURL('http://google.com')}>
+              Google
+            </Text>
+              </View>
+           </View>
+       </Animated.ScrollView>
+     </View>
+
+
+
+      {/* FRIENDS */}
+
+      <View style={styles.container}>
+    <Animated.ScrollView
+        onScroll={Animated.event(
+          [{nativeEvent: {contentOffset: {y: scrollA}}}],
+          {useNativeDriver: true},
+        )}
+        scrollEventThrottle={16}
+      >
+        <View style={styles.bannerContainer}>
+          <Text style={styles.title}> My Identities</Text>
+          <Animated.Image
+            style={styles.banner(scrollA)}
+            source={require('../../../assets/bitmoji2.png')}
+          />
+        </View>
+    
+          <View style={styles.bannerContainer2}>
+       
+          <CButton text={"My Friends"}  />
+          <View position='absolute' top={-30} right={80} bottom={30}>
+          <TouchableOpacity position='relative' top={-100}  >
+                      <Ionicons 
+                        name="information-circle-outline"
+                        size={45}
+                        color="black"
+                        />
+                  </TouchableOpacity>
+                  </View>
+
+              {/* <View alignItems="center" style={styles.parent}>
+                  <SButton text={"Black"}/>
+              </View> */}
+              
+    
+              <View flexDirection="row" justifyContent='center' paddingTop={10} >
+                <View marginRight={30}>
+                  <TouchableOpacity>
+                      <Ionicons
+                        name="ios-camera-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+                  </View>
+
+                  <View marginRight={30}>
+                  <TouchableOpacity >
+                      <Ionicons
+                       paddingRight={30}
+                        name="ios-pencil-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+                  </View>
+                  <TouchableOpacity >
+                      <Ionicons
+                        name="ios-people-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+
+              </View>
+{/* 
+              <View style={styles.header}> */}
+                <Text style={styles.headerText}>Name</Text>
+                  <View style={styles.containerBox}>
+                    <View style={styles.iconFlex}>
+                      {/* <Text> Hello world I'm here</Text> */}
+                      <Image source={require('../../../assets/bitmoji.png')}
+                        style={styles.iconBit}>
+                        </Image>
+                    </View>
+                    <View style={styles.iconFlex}>
+                      <Button title="hello"/>
+                    </View>
+
+                  </View>
+              {/* </View> */} 
+
+
+              <View paddingTop={300} justifyContent="center" alignItems="center">
+              <Text >Learn more about identities</Text>
+              <Text style={{color: 'orange'}}
+              onPress={() => Linking.openURL('http://google.com')}>
+              Google
+            </Text>
+            <Text style={{color: 'orange'}}
+              onPress={() => Linking.openURL('http://google.com')}>
+              Google
+            </Text>
+              </View>
+           </View>
+       </Animated.ScrollView>
+     </View>
+     
      
      </Swiper>
      
@@ -357,6 +559,39 @@ export default function IdentityMain({navigation}) {
   )
 }
 const styles = StyleSheet.create({
+
+iconBit:{
+  width: 50,
+  height: 50,
+
+},
+
+
+containerBox:{
+  flex: 1,
+  alignItems: "center", // ignore this - we'll come back to it
+  // justifyContent: "center", // ignore this - we'll come back to it
+  flexDirection: "row",
+
+},
+iconFlex:{
+  backgroundColor: "#7cb48f",
+  width: 100,
+  height: 100,
+  margin: 4,
+
+},
+
+headerText:{
+  fontFamily:'Avenir',
+  fontSize:20,
+  fontWeight: 'bold',
+
+},
+
+ header:{
+  padding:60,
+ },
 
   templateLeft:{
     marginTop:30,

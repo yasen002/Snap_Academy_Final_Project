@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 // Screens
 import SpotlightScreen from "../screens/SpotlightScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-
+import IdentityScreen from "../screens/IdentityScreen";
 const Stack = createStackNavigator();
 
 export default function SpotlightStack({ navigation }) {
