@@ -1,23 +1,23 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from '@react-navigation/stack';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Button } from "react-native";
 import { getAuth, signOut } from "firebase/auth";
 // Screens
-import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
-import StoriesScreen from "../screens/StoriesScreen";
-import SpotlightScreen from "../screens/SpotlightScreen";
 // Stacks
 import ChatStack from "./ChatStack";
+import MapStack from "./MapStack";
+import StoriesStack from "./StoriesStack";
+import SpotlightStack from "./SpotlightStack";
 
 const Tab = createBottomTabNavigator();
 
 export default function UserStack() {
   const auth = getAuth();
   const user = auth.currentUser;
-
   let screenOptions = {
     tabBarShowLabel: false,
     headerLeft: () => (
@@ -72,12 +72,10 @@ export default function UserStack() {
         })}
       >
         <Tab.Screen 
-        name="Map" component={MapScreen} 
+        name="Map" component={MapStack} 
         options={{...screenOptions, headerShown: false}} />
         <Tab.Screen 
         name="ChatStack" component={ChatStack} 
-        // options={{ headerShown: false, tabBarShowLabel: false }}
-        // options={{...screenOptions, headerShown: false}} 
         options={{...screenOptions, headerShown: false}}
          />
         <Tab.Screen
@@ -87,12 +85,12 @@ export default function UserStack() {
         />
         <Tab.Screen
           name="Stories"
-          component={StoriesScreen}
+          component={StoriesStack}
           options={{...screenOptions,  headerShown: false}}
         />
         <Tab.Screen
           name="Spotlight"
-          component={SpotlightScreen}
+          component={SpotlightStack}
           options={{screenOptions, headerShown:false,tabBarShowLabel: false}}
         />
       </Tab.Navigator>

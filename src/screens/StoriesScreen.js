@@ -4,7 +4,7 @@ import StatBar from '../components/StatBar'
 import { RNCamera , SafeAreaView, TouchableOpacity,} from 'react-native-camera';
 import MyComponent from '../components/MyComponent';
 
-const StoriesScreen = () => {
+const StoriesScreen = ({ navigation }) => {
   const cameraRef = useRef(null);
   const takePicture = async () => {
     if (cameraRef) {
@@ -16,9 +16,9 @@ const StoriesScreen = () => {
 
   return (
       <View>
-        <View style={{ height:93}}>
-          <StatBar screen="story" />
-        </View>
+      <View style={{ height:93}}>
+        <StatBar screen="map" navigation={navigation} />
+      </View>
         
         <Text>
           Stories Page

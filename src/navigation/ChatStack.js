@@ -1,22 +1,13 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { Button } from "react-native";
-
 // Screens
 import ChatScreen from "../screens/ChatScreen";
 import ConversationScreen from "../screens/ConversationScreen";
-
-import { getAuth, signOut } from "firebase/auth";
-
-
+import ProfileScreen from "../screens/ProfileScreen";
 const Stack = createStackNavigator();
 
 export default function ChatStack({ navigation }) {
-
-  const auth = getAuth();
-  const user = auth.currentUser;
-
   let screenOptions = {
     tabBarShowLabel: false,
     headerShown: false,
@@ -30,6 +21,7 @@ export default function ChatStack({ navigation }) {
         options={screenOptions}
       />
       <Stack.Screen name="Conversation" component={ConversationScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerTransparent:true}}/>
     </Stack.Navigator>
   );
 }

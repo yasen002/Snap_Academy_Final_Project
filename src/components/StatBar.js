@@ -1,18 +1,22 @@
 import React from "react";
 import { View,Text , Image, StyleSheet } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export default function StatBar({ screen="camera" }) {
-const myIcon = <Icon name="rocket" size={30} color="#900" />;
+export default function StatBar({navigation , screen="camera" }) {
 
-  return (
+return (
   <View style={styles.container}>
-    <View >
-      <Image
-        style={styles.bitmojiImage}
-        source={require("../../assets/snapchat/personalBitmoji.png")} //<i class="fa-solid fa-magnifying-glass"></i>
-      />
-    </View>
+      <TouchableOpacity
+      onPress={()=>{
+        navigation.navigate("Profile");
+      }}
+      >
+        <Image
+          style={styles.bitmojiImage}
+          source={require("../../assets/snapchat/personalBitmoji.png")} //<i class="fa-solid fa-magnifying-glass"></i>
+        />
+      </TouchableOpacity>
   <View style={styles.iconContainer} >
     <Icon name="search" size={15} color="#ffffff" />
   </View>

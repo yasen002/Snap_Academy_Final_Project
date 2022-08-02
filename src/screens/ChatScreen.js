@@ -24,7 +24,7 @@ export default function ChatScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={{ height:93}}>
-        <StatBar screen="chat" static='true' />
+        <StatBar screen="map" navigation={navigation} />
       </View>
       <Text>Hi from chat</Text>
       {users?.map((user) => {

@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://if-wnu.anonymous.snap-academy-final-project.exp.direct",
+  "packagerNgrokUrl": "https://if-wnu.anonymous.snap-academy-final-project.exp.direct",
+  "ngrokPid": 48018,
+  "packagerPid": null,
+  "webpackServerPort": null
+}
