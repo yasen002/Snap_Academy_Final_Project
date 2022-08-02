@@ -136,7 +136,7 @@ export default function IdentityMain({navigation}) {
      </View>
 
 
-    {/* SEXUALITY */}
+    {/* PRONOUNS */}
 
      <View style={styles.container}>
     <Animated.ScrollView
@@ -206,6 +206,114 @@ export default function IdentityMain({navigation}) {
               </View>
 
               <Text style={styles.title}>My identity is my super power</Text>
+              
+              
+              <Image
+              source={require('../../../assets/sticker.png')}
+              style={styles.templateLeft}>
+              </Image>
+
+              <Image
+              source={require('../../../assets/sticker.png')}
+              style={styles.templateRight}>
+              </Image>
+
+              <Image
+              source={require('../../../assets/sticker.png')}
+              style={styles.templateLeft}>
+              </Image>
+              <Image
+              source={require('../../../assets/sticker.png')}
+              style={styles.templateRight}>
+              </Image>
+
+              <View paddingTop={300} justifyContent="center" alignItems="center">
+              <Text >Learn more about identities</Text>
+              <Text style={{color: 'orange'}}
+              onPress={() => Linking.openURL('http://google.com')}>
+              Google
+            </Text>
+            <Text style={{color: 'orange'}}
+              onPress={() => Linking.openURL('http://google.com')}>
+              Google
+            </Text>
+              </View>
+           </View>
+       </Animated.ScrollView>
+     </View>
+
+
+
+         {/* SEXUALITY */}
+
+         <View style={styles.container}>
+    <Animated.ScrollView
+        onScroll={Animated.event(
+          [{nativeEvent: {contentOffset: {y: scrollA}}}],
+          {useNativeDriver: true},
+        )}
+        scrollEventThrottle={16}
+      >
+        <View style={styles.bannerContainer}>
+          <Text style={styles.title}> My Identities</Text>
+          <Animated.Image
+            style={styles.banner(scrollA)}
+            source={require('../../../assets/bitmoji2.png')}
+          />
+        </View>
+    
+          <View style={styles.bannerContainer2}>
+       
+          <CButton text={"Pronouns"}  />
+          <View position='absolute' top={-30} right={80} bottom={30}>
+          <TouchableOpacity position='relative' top={-100}  >
+                      <Ionicons 
+                        name="information-circle-outline"
+                        size={45}
+                        color="black"
+                        />
+                  </TouchableOpacity>
+                  </View>
+
+              <View alignItems="center" style={styles.parent}>
+                  <SButton text={"She/Her"}/>
+                  {/* <DButton text={"Display to Profile"} /> */}
+                  {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
+              </View>
+              
+    
+              <View flexDirection="row" justifyContent='center' paddingTop={10} >
+                <View marginRight={30}>
+                  <TouchableOpacity>
+                      <Ionicons
+                        name="ios-camera-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+                  </View>
+
+                  <View marginRight={30}>
+                  <TouchableOpacity >
+                      <Ionicons
+                       paddingRight={30}
+                        name="ios-pencil-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+                  </View>
+                  <TouchableOpacity >
+                      <Ionicons
+                        name="ios-people-outline"
+                        size={30}
+                        color="black"
+                      />
+                  </TouchableOpacity>
+
+              </View>
+
+              <Text style={styles.title}> Be True to You </Text>
               
               
               <Image
