@@ -13,17 +13,22 @@ const CButton = ({ text }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "yellow",
+    backgroundColor: "white",
     padding: 23,
-    width: "50%",
-    height: 70,
+    width: "60%",
+    height: 80,
     borderRadius: 20,
     position: 'relative',
     top: -20,
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
     
   },
   text: {
-    fontSize: 25,
+    fontSize: 30,
     color: "black",
     textAlign: "center",
     fontWeight: "bold",

@@ -12,11 +12,17 @@ const SButton = ({ text }) => {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: "yellow",
-    marginRight: 5, // space between the yellow and pink button 
+    // marginRight: 5, // space between the yellow and pink button 
     padding: 16,
     width: "30%",
     height: 50,
-    borderRadius: 20, //20
+    borderRadius: 15, //20
+    marginTop:-10,
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
     
   },
   text: {

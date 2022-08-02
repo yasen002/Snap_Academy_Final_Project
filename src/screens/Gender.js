@@ -16,7 +16,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 
 
-export default function Gender({navigation}) {
+export default function Gender() {
   const [loaded] = useFonts({
 		Avenir: require('../../fonts/AvenirNextLTPro-Bold.otf'),
 	  });

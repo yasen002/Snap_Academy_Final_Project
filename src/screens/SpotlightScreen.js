@@ -6,185 +6,267 @@ import { View,
   StyleSheet,
   ScrollView,
   Button,
-  Animated} from 'react-native'
+  Animated,
+  Linking
+} from 'react-native'
+import Swiper from "react-native-web-swiper";
 import {useFonts} from 'expo-font';
 import {BANNER_H} from '../../constants';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import CButton from '../../typeButtons';
 import SButton from '../../smallButtons';
-import DButton from '../../displayProfile';
-
-import MButton from '../../mainButton';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StatBar from '../components/StatBar';
+import IdentityMain from '../components/Identity/IdentityMain';
 
 
 
 
 export default function SpotlightScreen({navigation}) {
-  const [loaded] = useFonts({
-		Avenir: require('../../fonts/AvenirNextLTPro-Bold.otf'),
-	  });
-    const scrollA = useRef(new Animated.Value(0)).current;
+  // const [loaded] = useFonts({
+	// 	Avenir: require('../../fonts/AvenirNextLTPro-Bold.otf'),
+	//   });
+  //   const scrollA = useRef(new Animated.Value(0)).current;
 
   return (
-<<<<<<< HEAD
-    <View style={styles.container}>
-    <Animated.ScrollView
-        onScroll={Animated.event(
-          [{nativeEvent: {contentOffset: {y: scrollA}}}],
-          {useNativeDriver: true},
-        )}
-        scrollEventThrottle={16}
-      >
-        <View style={styles.bannerContainer}>
-          <Text style={styles.title}> Identity</Text>
-          <Animated.Image
-            style={styles.banner(scrollA)}
-            source={require('../../assets/bitmoji2.png')}
-          />
-        </View>
-          <View style={styles.bannerContainer2}>
+      <>
+      <IdentityMain />
+      </>
+  //   <Swiper>
+  //   <View style={styles.container}>
+  //   <Animated.ScrollView
+  //       onScroll={Animated.event(
+  //         [{nativeEvent: {contentOffset: {y: scrollA}}}],
+  //         {useNativeDriver: true},
+  //       )}
+  //       scrollEventThrottle={16}
+  //     >
+  //       <View style={styles.bannerContainer}>
+  //         <Text style={styles.title}> My Identities</Text>
+  //         <Animated.Image
+  //           style={styles.banner(scrollA)}
+  //           source={require('../../assets/bitmoji2.png')}
+  //         />
+  //       </View>
+    
+  //         <View style={styles.bannerContainer2}>
        
-          <CButton text={"Gender"}  />
-          <View position='absolute' top={-30} right={80} bottom={30}>
-          <TouchableOpacity position='relative' top={-100}  >
-                      <Ionicons 
-                        name="information-circle-outline"
-                        size={45}
-                        color="black"
-                        />
-                  </TouchableOpacity>
-                  </View>
+  //         <CButton text={"Gender"}  />
+  //         <View position='absolute' top={-30} right={80} bottom={30}>
+  //         <TouchableOpacity position='relative' top={-100}  >
+  //                     <Ionicons 
+  //                       name="information-circle-outline"
+  //                       size={45}
+  //                       color="black"
+  //                       />
+  //                 </TouchableOpacity>
+  //                 </View>
 
-              <View alignItems="center" style={styles.parent}>
-                  <SButton text={"Sexuality"}/>
-                  <DButton text={"Display to Profile"} />
-                  {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
-              </View>
+  //             <View alignItems="center" style={styles.parent}>
+  //                 <SButton text={"Female"}/>
+  //                 {/* <DButton text={"Display to Profile"} /> */}
+  //                 {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
+  //             </View>
+              
+    
+  //             <View flexDirection="row" justifyContent='center' paddingTop={10} >
+  //               <View marginRight={30}>
+  //                 <TouchableOpacity>
+  //                     <Ionicons
+  //                       name="ios-camera-outline"
+  //                       size={30}
+  //                       color="black"
+  //                     />
+  //                 </TouchableOpacity>
+  //                 </View>
+
+  //                 <View marginRight={30}>
+  //                 <TouchableOpacity >
+  //                     <Ionicons
+  //                      paddingRight={30}
+  //                       name="ios-pencil-outline"
+  //                       size={30}
+  //                       color="black"
+  //                     />
+  //                 </TouchableOpacity>
+  //                 </View>
+  //                 <TouchableOpacity >
+  //                     <Ionicons
+  //                       name="ios-people-outline"
+  //                       size={30}
+  //                       color="black"
+  //                     />
+  //                 </TouchableOpacity>
+
+  //             </View>
+
+  //             <Text style={styles.title}>Identity is up to you</Text>
               
               
-            
-              {/* <View style={styles.parent}>
-                <MButton text={"Woman"}
-                sub={"she/her"}
-                />
-              </View> */}
-              {/* <Text style={styles.miniHeader}> 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-              semper turpis. Ut in fringilla nisl, sit amet aliquet urna. Donec
-              sollicitudin libero sapien, ut accumsan justo venenatis et. Proin iaculis
-              ac dolor eget malesuada. Cras commodo, diam id semper sodales, tortor leo
-              suscipit leo, vitae dignissim velit turpis et diam. 
-              </Text> */}
-              <View flexDirection="row" justifyContent='center' paddingTop={10} >
-                <View marginRight={30}>
-                  <TouchableOpacity>
-                      <Ionicons
-                        name="ios-camera-outline"
-                        size={30}
-                        color="black"
-                      />
-                  </TouchableOpacity>
-                  </View>
+  //             <Image
+  //             source={require('../../assets/sticker.png')}
+  //             style={styles.templateLeft}>
+  //             </Image>
 
-                  <View marginRight={30}>
-                  <TouchableOpacity >
-                      <Ionicons
-                       paddingRight={30}
-                        name="ios-pencil-outline"
-                        size={30}
-                        color="black"
-                      />
-                  </TouchableOpacity>
-                  </View>
-                  <TouchableOpacity >
-                      <Ionicons
-                        name="ios-people-outline"
-                        size={30}
-                        color="black"
-                      />
-                  </TouchableOpacity>
+  //             <Image
+  //             source={require('../../assets/sticker.png')}
+  //             style={styles.templateRight}>
+  //             </Image>
 
-              </View>
+  //             <Image
+  //             source={require('../../assets/sticker.png')}
+  //             style={styles.templateLeft}>
+  //             </Image>
+  //             <Image
+  //             source={require('../../assets/sticker.png')}
+  //             style={styles.templateRight}>
+  //             </Image>
 
-              <Text style={styles.title}>Identity is...</Text>
-=======
-    <View>
-      <StatBar screen='spotlight' box='true' />
-      <Text>Hello form Stories</Text>
-    </View>
-    // <View style={styles.container}>
-    // <Animated.ScrollView
-    //     onScroll={Animated.event(
-    //       [{nativeEvent: {contentOffset: {y: scrollA}}}],
-    //       {useNativeDriver: true},
-    //     )}
-    //     scrollEventThrottle={16}
-    //   >
-    //     <View style={styles.bannerContainer}>
-    //       <Text style={styles.title}> My Identity</Text>
-    //       <Animated.Image
-    //         style={styles.banner(scrollA)}
-    //         source={require('../../assets/bitmoji2.png')}
-    //       />
-    //     </View>
-    //       <View style={styles.bannerContainer2}>
-    //           <View style={styles.parent}>
-    //               <CButton text={"Sexuality"}/>
-    //               <CButton text={"Gender"} />
-    //               {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
-    //               <CButton text={"Ethnicity"} />
-    //           </View>
+  //             <View paddingTop={300} justifyContent="center" alignItems="center">
+  //             <Text >Learn more about identities</Text>
+  //             <Text style={{color: 'orange'}}
+  //             onPress={() => Linking.openURL('http://google.com')}>
+  //             Google
+  //           </Text>
+  //           <Text style={{color: 'orange'}}
+  //             onPress={() => Linking.openURL('http://google.com')}>
+  //             Google
+  //           </Text>
+  //             </View>
+  //          </View>
+  //      </Animated.ScrollView>
+  //    </View>
+
+
+  //   {/* SEXUALITY */}
+
+  //    <View style={styles.container}>
+  //   <Animated.ScrollView
+  //       onScroll={Animated.event(
+  //         [{nativeEvent: {contentOffset: {y: scrollA}}}],
+  //         {useNativeDriver: true},
+  //       )}
+  //       scrollEventThrottle={16}
+  //     >
+  //       <View style={styles.bannerContainer}>
+  //         <Text style={styles.title}> My Identities</Text>
+  //         <Animated.Image
+  //           style={styles.banner(scrollA)}
+  //           source={require('../../assets/bitmoji2.png')}
+  //         />
+  //       </View>
+    
+  //         <View style={styles.bannerContainer2}>
+       
+  //         <CButton text={"Sexuality"}  />
+  //         <View position='absolute' top={-30} right={80} bottom={30}>
+  //         <TouchableOpacity position='relative' top={-100}  >
+  //                     <Ionicons 
+  //                       name="information-circle-outline"
+  //                       size={45}
+  //                       color="black"
+  //                       />
+  //                 </TouchableOpacity>
+  //                 </View>
+
+  //             <View alignItems="center" style={styles.parent}>
+  //                 <SButton text={"She/Her"}/>
+  //                 {/* <DButton text={"Display to Profile"} /> */}
+  //                 {/* <Button title="Gender" onPress={() => navigation.navigate("Gender")}/> */}
+  //             </View>
+              
+    
+  //             <View flexDirection="row" justifyContent='center' paddingTop={10} >
+  //               <View marginRight={30}>
+  //                 <TouchableOpacity>
+  //                     <Ionicons
+  //                       name="ios-camera-outline"
+  //                       size={30}
+  //                       color="black"
+  //                     />
+  //                 </TouchableOpacity>
+  //                 </View>
+
+  //                 <View marginRight={30}>
+  //                 <TouchableOpacity >
+  //                     <Ionicons
+  //                      paddingRight={30}
+  //                       name="ios-pencil-outline"
+  //                       size={30}
+  //                       color="black"
+  //                     />
+  //                 </TouchableOpacity>
+  //                 </View>
+  //                 <TouchableOpacity >
+  //                     <Ionicons
+  //                       name="ios-people-outline"
+  //                       size={30}
+  //                       color="black"
+  //                     />
+  //                 </TouchableOpacity>
+
+  //             </View>
+
+  //             <Text style={styles.title}>My identity is my super power</Text>
               
               
-            
-    //           <View style={styles.parent}>
-    //             <MButton text={"Woman"}
-    //             sub={"she/her"}
-    //             />
-    //           </View>
-    //           <Text style={styles.miniHeader}> 
-    //           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-    //           semper turpis. Ut in fringilla nisl, sit amet aliquet urna. Donec
-    //           sollicitudin libero sapien, ut accumsan justo venenatis et. Proin iaculis
-    //           ac dolor eget malesuada. Cras commodo, diam id semper sodales, tortor leo
-    //           suscipit leo, vitae dignissim velit turpis et diam. 
-    //           </Text>
-    //           <View flexDirection="row" justifyContent='space-evenly'>
-    //               <TouchableOpacity>
-    //                   <Ionicons
-    //                     name="ios-camera-outline"
-    //                     size={30}
-    //                     color="black"
-    //                   />
-    //               </TouchableOpacity>
-    //               <TouchableOpacity >
-    //                   <Ionicons
-    //                     name="ios-pencil-outline"
-    //                     size={30}
-    //                     color="black"
-    //                   />
-    //               </TouchableOpacity>
-    //               <TouchableOpacity >
-    //                   <Ionicons
-    //                     name="ios-people-outline"
-    //                     size={30}
-    //                     color="black"
-    //                   />
-    //               </TouchableOpacity>
+  //             <Image
+  //             source={require('../../assets/sticker.png')}
+  //             style={styles.templateLeft}>
+  //             </Image>
 
-    //           </View>
->>>>>>> 961d2f0c6ef609fea19f6a9a72d3e38fd04db2d6
-                  
-            
-    //       </View>
-    //   </Animated.ScrollView>
-        
-    // </View>
+  //             <Image
+  //             source={require('../../assets/sticker.png')}
+  //             style={styles.templateRight}>
+  //             </Image>
+
+  //             <Image
+  //             source={require('../../assets/sticker.png')}
+  //             style={styles.templateLeft}>
+  //             </Image>
+  //             <Image
+  //             source={require('../../assets/sticker.png')}
+  //             style={styles.templateRight}>
+  //             </Image>
+
+  //             <View paddingTop={300} justifyContent="center" alignItems="center">
+  //             <Text >Learn more about identities</Text>
+  //             <Text style={{color: 'orange'}}
+  //             onPress={() => Linking.openURL('http://google.com')}>
+  //             Google
+  //           </Text>
+  //           <Text style={{color: 'orange'}}
+  //             onPress={() => Linking.openURL('http://google.com')}>
+  //             Google
+  //           </Text>
+  //             </View>
+  //          </View>
+  //      </Animated.ScrollView>
+  //    </View>
+     
+  //    </Swiper>
+     
+     
+     
   )
 }
 const styles = StyleSheet.create({
+
+  templateLeft:{
+    marginTop:30,
+    width:150,
+    height:150,
+    marginRight:200,
+
+  },
+  templateRight:{
+    width:150,
+    height:150,
+    marginRight:-200,
+
+  },
+  
+
   buttonStyle:{
       justifyContent:'center',
   },
@@ -213,29 +295,26 @@ const styles = StyleSheet.create({
  
   bannerContainer2:{
     justifyContent:'center',
-    backgroundColor:'white',
-    width: 375,
-    borderTopEndRadius: 30,
-    borderBottomLeftRadius:30,
+    backgroundColor:'white', // background color for card
+    width: 410, //change size after completed project for iphone
+    // borderTopEndRadius: 30,
     borderRadius:30,
-    marginBottom: 130,
+    borderBottomLeftRadius:0,
+    borderBottomRightRadius:0,
+    
+    // marginBottom: 130, //caused the yellow space underneath to show fixed!!
     textAlign:'center',
     alignContent: 'center',
     alignItems: 'center',
   },
-  // bitmoji:{
-  //   width: 400,
-  //   height: 300,
-  //   alignItems: 'center',
-  //   overflow: 'hidden',
-  //   marginBottom: 40,
-  // },
+ 
   container: {
     alignItems: 'center',
     backgroundColor: 'yellow',
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width,
     fontFamily:'Avenir',
+    flex:1,
     
     },
     container2:{
@@ -247,6 +326,8 @@ const styles = StyleSheet.create({
     },
     title:{
       paddingTop:50,
+      paddingRight:90,
+      paddingLeft:90,
       paddingBottom:30,
       fontFamily:'Avenir',
       fontSize: 50,
