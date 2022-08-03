@@ -11,6 +11,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import CButton from '../../../typeButtons';
 import SButton from '../../../smallButtons';
 import Ionicons from "react-native-vector-icons/Ionicons";
+import ActionButton from './button/ActionButton';
 
 const BANNER_H = 350;
 
@@ -25,7 +26,6 @@ export default function EthnicityCategory({category, title, message}) {
           )}
           scrollEventThrottle={16}
         >
-          {/* Drawer top  */}
           <View style={styles.bannerContainer}>
             <Text style={styles.title}>{title}</Text>
             <Animated.Image
@@ -51,37 +51,13 @@ export default function EthnicityCategory({category, title, message}) {
           </View>
     
         <View flexDirection="row" justifyContent='center' paddingTop={10} >
-            <View marginRight={30}>
-              <TouchableOpacity>
-                <Ionicons
-                  name="ios-camera-outline"
-                  size={30}
-                  color="black"
-                />
-              </TouchableOpacity>
-            </View>
-
-            <View marginRight={30}>
-              <TouchableOpacity >
-                <Ionicons
-                paddingRight={30}
-                  name="ios-pencil-outline"
-                  size={30}
-                  color="black"
-                />
-              </TouchableOpacity>
-            </View>
-
-            <TouchableOpacity >
-              <Ionicons
-                name="ios-people-outline"
-                size={30}
-                color="black"
-              />
-            </TouchableOpacity>
+           <ActionButton icon='ios-camera-outline' />
+           <ActionButton icon='ios-pencil-outline' />
+           <ActionButton icon='ios-people-outline' />
         </View>
     
         <Text style={styles.title}>{message}</Text>
+        
         <Image
         source={require('../../../assets/sticker.png')}
         style={styles.templateLeft}>
