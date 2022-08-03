@@ -8,13 +8,11 @@ import {
 } from "react-native";
 
 
-
 import * as Location from "expo-location";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StatBar from "../components/StatBar";
 import PlacesBitmoji from "../components/MapScreen/PlacesBitmoji";
-import StatBarStack from "../navigation/StatBarStack";
 
 
 export default function MapScreen({ navigation }) {
@@ -49,8 +47,7 @@ export default function MapScreen({ navigation }) {
       }); 
 
 
-      setLocation(regionName);
-      console.log(regionName, 'nothing');
+
 
      } catch (error) {
       console.log("MapScreen.js error: ", error)

@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import ChatScreen from "../screens/ChatScreen";
 import ConversationScreen from "../screens/ConversationScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import IdentityScreen from "../screens/IdentityScreen";
 const Stack = createStackNavigator();
 
 export default function ChatStack({ navigation }) {
@@ -21,7 +22,9 @@ export default function ChatStack({ navigation }) {
         options={screenOptions}
       />
       <Stack.Screen name="Conversation" component={ConversationScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerTransparent:true}}/>
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerTransparent:true}} />
+      <Stack.Screen name="Identity" component={IdentityScreen} options={{ headerTransparent:true}} />
+      
     </Stack.Navigator>
   );
 }
