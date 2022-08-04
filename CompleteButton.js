@@ -11,16 +11,17 @@ const completeButton = ({ text }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "blue",
+    fontFamily: "Graphik-Regular",
+    backgroundColor: "#2a2a2a",
     marginRight: 5,
     padding: 16,
-    width: "30%",
+    width: "70%",
     height: 50,
     borderRadius: 20, //20
   },
   text: {
     fontSize: 15,
-    color: "black",
+    color: "white",
     textAlign: "center",
     fontWeight: "bold",
   },

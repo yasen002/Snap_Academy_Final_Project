@@ -2,30 +2,37 @@ import React from "react";
 import { View, Text, Linking } from "react-native";
 import Option from "./Option";
 import CompleteButton from "../../../CompleteButton";
+import { useFonts } from "expo-font";
 
 export default function Edit() {
   return (
     <View
       style={{ backgroundColor: "#fae268", paddingRight: 40, paddingLeft: 40 }}
     >
-      <Text style={{ textAlign: "center", paddingBottom: 60, paddingTop: 100 }}>
-        My Identities
+      <Text
+        style={{
+          fontFamily: "GraphikWide-Black",
+          fontSize: 36,
+          color: "#2a2a2a",
+          textAlign: "center",
+          paddingBottom: 40,
+          paddingTop: 80,
+        }}
+      >
+        My {"\n"}Identities
       </Text>
-      <Text style={{ paddingRight: 40, paddingLeft: 40, textAlign: "center" }}>
+      <Text
+        style={{
+          fontFamily: "Graphik-Regular",
+          paddingRight: 25,
+          paddingLeft: 25,
+          color: "#2a2a2a",
+          textAlign: "center",
+        }}
+      >
         In each identity category pick which best describes you. Your identities
         reflect who you truly are and your self expression.
       </Text>
-      <Option
-        title="Pronouns"
-        inputText="Enter Pronouns"
-        data={[
-          { key: "1", value: "he/him" },
-          { key: "2", value: "she/her" },
-          { key: "3", value: "they/them" },
-          { key: "4", value: "No Preference" },
-          { key: "5", value: "Other" },
-        ]}
-      />
       <Option
         title="Gender"
         inputText="Enter Gender"
@@ -38,6 +45,18 @@ export default function Edit() {
           { key: "6", value: "Other" },
         ]}
       />
+      <Option
+        title="Pronouns"
+        inputText="Enter Pronouns"
+        data={[
+          { key: "1", value: "he/him" },
+          { key: "2", value: "she/her" },
+          { key: "3", value: "they/them" },
+          { key: "4", value: "No Preference" },
+          { key: "5", value: "Other" },
+        ]}
+      />
+
       <Option
         title="Sexuality"
         inputText="Enter Sexuality"
@@ -65,14 +84,24 @@ export default function Edit() {
           { key: "7", value: "Other" },
         ]}
       />
-      <Text style={{ paddingTop: 40, textAlign: "center" }}>
+      <Text
+        style={{
+          fontFamily: "Graphik-Regular",
+          paddingTop: 40,
+          textAlign: "center",
+        }}
+      >
         Not sure what to choose?
       </Text>
       <Text
-        style={{ color: "orange", textAlign: "center" }}
+        style={{
+          fontFamily: "Graphik-Regular",
+          textAlign: "center",
+          textDecorationLine: "underline",
+        }}
         onPress={() => Linking.openURL("http://google.com")}
       >
-        Learn more about identities here.
+        Learn more about identities.
       </Text>
       <View
         style={{

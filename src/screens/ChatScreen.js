@@ -23,7 +23,7 @@ export default function ChatScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={{ height:93}}>
+      <View style={{ height: 93 }}>
         <StatBar screen="map" navigation={navigation} />
       </View>
       <Text>Hi from chat</Text>
