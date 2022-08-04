@@ -1,16 +1,29 @@
-import React from 'react'
-import IdentityMain from '../components/Identity/IdentityMain';
-import ProfileScreen from "./ProfileScreen"
-import {View, Text} from "react-native"
 import StatBar from "../components/StatBar"
-export default function SpotlightScreen({navigation}) {
+import React from "react";
+import { View, ScrollView } from "react-native";
+import List from "../components/friendList/List";
+import Option from "../components/edit/Option";
+import Edit from "../components/edit/Edit";
+
+import IdentityMain from "../components/Identity/IdentityMain";
+
+export default function SpotlightScreen({ navigation }) {
   return (
-     <View >
+    <>
+      {/* <IdentityMain /> */}
+      {/* <List /> */}
+      {/* <IdentityMain /> */}
+
+      {/* <View >
       <View style={{ height:93}}>
         <StatBar screen="map" navigation={navigation} />
       </View>
       <Text>Hi from SpotLight</Text>
-    </View>
-     
-  )
+    </View> */}
+
+      <ScrollView style={{ backgroundColor: "#fae268" }}>
+        <Edit />
+      </ScrollView>
+    </>
+  );
 }
