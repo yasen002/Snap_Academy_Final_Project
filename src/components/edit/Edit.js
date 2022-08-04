@@ -4,7 +4,44 @@ import Option from "./Option";
 import CompleteButton from "../../../CompleteButton";
 import { useFonts } from "expo-font";
 
+//Redux import
+import { useSelector, useDispatch } from 'react-redux'
+import { updateGender, updateEthnicity, updatePronoun, updateSexuality } from "../../features/identity/identitySlice";
+
 export default function Edit() {
+  //user redux states
+  const genderOptions = useSelector((state) => state.identity.genderOptions)
+  const pronounOptions = useSelector((state) => state.identity.pronounOptions)
+  const ethnicityOptions = useSelector((state) => state.identity.ethnicityOptions)
+  const sexualityOptions = useSelector((state) => state.identity.sexualityOptions)
+  const dispatch = useDispatch()
+
+  const handleEdit=(selected)=>{
+    const updateValue = selected.split("-");
+    updateValue[1] = updateValue[1]-1;
+
+    switch (updateValue[0]) {
+      case "gender":
+        dispatch(updateGender(updateValue))
+        break;
+      case "ethnicity":
+        dispatch(updateEthnicity(updateValue))
+        break;
+      case "sexuality":
+        dispatch(updateSexuality(updateValue))
+        break;
+      case "pronoun":
+        dispatch(updatePronoun(updateValue))
+        break;
+      default:
+        break;
+    }
+  }
+
+
+
+
+
   return (
     <View
       style={{ backgroundColor: "#fae268", paddingRight: 40, paddingLeft: 40 }}
@@ -36,53 +73,27 @@ export default function Edit() {
       <Option
         title="Gender"
         inputText="Enter Gender"
-        data={[
-          { key: "1", value: "Man" },
-          { key: "2", value: "Woman" },
-          { key: "3", value: "Transgender" },
-          { key: "4", value: "Non-binary/Non-comforming" },
-          { key: "5", value: "No Preference" },
-          { key: "6", value: "Other" },
-        ]}
+        handleEdit={handleEdit}
+        data={genderOptions}
       />
       <Option
         title="Pronouns"
         inputText="Enter Pronouns"
-        data={[
-          { key: "1", value: "he/him" },
-          { key: "2", value: "she/her" },
-          { key: "3", value: "they/them" },
-          { key: "4", value: "No Preference" },
-          { key: "5", value: "Other" },
-        ]}
+        handleEdit={handleEdit}
+        data={pronounOptions}
       />
 
       <Option
         title="Sexuality"
         inputText="Enter Sexuality"
-        data={[
-          { key: "1", value: "Heterosexual" },
-          { key: "2", value: "Bisexual" },
-          { key: "3", value: "Homosexual" },
-          { key: "4", value: "Pansexual" },
-          { key: "5", value: "Asexual" },
-          { key: "6", value: "No Preference" },
-          { key: "7", value: "Other" },
-        ]}
+        handleEdit={handleEdit}
+        data={sexualityOptions}
       />
       <Option
         title="Ethnicity"
         inputText="Enter Ethnicity"
-        data={[
-          { key: "1", value: "White" },
-          { key: "2", value: "Black or African" },
-          { key: "3", value: "Hispanic" },
-          { key: "4", value: "Indian or Alaska Native" },
-          { key: "5", value: "Asian" },
-          { key: "6", value: "Native Hawaiin or other Pacific Islander" },
-          { key: "7", value: "Preference" },
-          { key: "7", value: "Other" },
-        ]}
+        handleEdit={handleEdit}
+        data={ethnicityOptions}
       />
       <Text
         style={{
