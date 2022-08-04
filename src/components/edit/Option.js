@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text } from "react-native";
 import SelectedList from "react-native-dropdown-select-list";
 
-export default function Option({ inputText, title, data }) {
+export default function Option({ inputText, title, data, handleEdit }) {
   const [selected, setSelected] = React.useState("");
+
+  useEffect(() => {
+   if(selected!==""){
+    handleEdit(selected)
+   }
+
+  }, [selected])
+  
 
   return (
     <View>

@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
-import { useSelector, useDispatch } from 'react-redux'
 import db from "../../firebase";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StatBar from "../components/StatBar";
 
-//Redux
-import { increment, decrement } from "firebase/firestore";
-
-
-
+//just to test out redux
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function ChatScreen({ navigation }) {
-  //user redux states
-  const count = useSelector((state) => state.identity.value)
-  const dispatch = useDispatch()
+  
+  //just to test out redux
+  const gender = useSelector((state) => state.identity.gender)
+  const sexuality = useSelector((state) => state.identity.sexuality)
+  const ethnicity = useSelector((state) => state.identity.ethnicity)
+  const pronoun = useSelector((state) => state.identity.pronoun)
+
+
+
 
   const [users, setUsers] = useState([]);
   async function getUsers() {
@@ -33,7 +35,11 @@ export default function ChatScreen({ navigation }) {
       <View style={{ height: 93 }}>
         <StatBar screen="map" navigation={navigation} />
       </View>
-      <Text>Hi from chat{count}</Text>
+      <Text>Hi from chat</Text>
+      <Text>Gender: {gender}</Text>
+      <Text>ethnicity: {ethnicity}</Text>
+      <Text>pronoun: {pronoun}</Text>
+      <Text>sexuality: {sexuality}</Text>
       {users?.map((user) => {
         return (
           <TouchableOpacity
