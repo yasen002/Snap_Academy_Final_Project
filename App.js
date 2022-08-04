@@ -1,6 +1,8 @@
 import React from "react";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
+import { store } from './src/app/store'
+import { Provider } from 'react-redux'
 
 // Firebase
 import "./firebase";
@@ -19,5 +21,7 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
-  return <RootNavigation />;
+  return  <Provider store={store}> 
+            <RootNavigation />
+          </Provider>;
 }

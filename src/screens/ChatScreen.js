@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
-
-import { collection, getDocs } from "firebase/firestore";
+import { useSelector, useDispatch } from 'react-redux'
 import db from "../../firebase";
-
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StatBar from "../components/StatBar";
 
-export default function ChatScreen({ navigation }) {
-  const [users, setUsers] = useState([]);
+//Redux
+import { increment, decrement } from "firebase/firestore";
 
+
+
+
+export default function ChatScreen({ navigation }) {
+  //user redux states
+  const count = useSelector((state) => state.identity.value)
+  const dispatch = useDispatch()
+
+  const [users, setUsers] = useState([]);
   async function getUsers() {
     const querySnapshot = await getDocs(collection(db, "Chats"));
     querySnapshot.forEach((doc) => {
@@ -26,7 +33,7 @@ export default function ChatScreen({ navigation }) {
       <View style={{ height: 93 }}>
         <StatBar screen="map" navigation={navigation} />
       </View>
-      <Text>Hi from chat</Text>
+      <Text>Hi from chat{count}</Text>
       {users?.map((user) => {
         return (
           <TouchableOpacity
