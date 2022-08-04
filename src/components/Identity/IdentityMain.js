@@ -6,7 +6,6 @@ import SexualityCategory from "./SexualityCategory";
 import EthnicityCategory from "./EthnicityCategory";
 
 export default function IdentityMain() {
-
   return (
     <Swiper>
       <GenderCategory
@@ -21,12 +20,12 @@ export default function IdentityMain() {
       />
       <SexualityCategory
         category="Sexuality"
-        title="My Sexuality"
+        title="My Identities"
         message="Some message for Sexuality Page"
       />
       <EthnicityCategory
         category="Ethnicity"
-        title="My Ethnicity"
+        title="My Identities"
         message="Some message for Ethnicity Page"
       />
     </Swiper>

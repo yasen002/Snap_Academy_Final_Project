@@ -1,4 +1,4 @@
-import StatBar from "../components/StatBar"
+import StatBar from "../components/StatBar";
 import React from "react";
 import { View, ScrollView } from "react-native";
 import List from "../components/friendList/List";
@@ -21,9 +21,10 @@ export default function SpotlightScreen({ navigation }) {
       <Text>Hi from SpotLight</Text>
     </View> */}
 
-      <ScrollView style={{ backgroundColor: "#fae268" }}>
+      {/* <ScrollView style={{ backgroundColor: "#fae268" }}>
         <Edit />
-      </ScrollView>
+      </ScrollView> */}
+      <IdentityMain />
     </>
   );
 }

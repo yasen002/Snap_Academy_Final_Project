@@ -12,13 +12,16 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import CButton from "../../../typeButtons";
 import SButton from "../../../smallButtons";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import ActionButton from './button/ActionButton';
+import ActionButton from "./button/ActionButton";
 const BANNER_H = 350;
 
-export default function IdentityCategory({ category, title, message, navigation }) {
+export default function IdentityCategory({
+  category,
+  title,
+  message,
+  navigation,
+}) {
   const scrollA = useRef(new Animated.Value(0)).current;
-
- 
 
   return (
     <View style={styles.container}>
@@ -34,7 +37,7 @@ export default function IdentityCategory({ category, title, message, navigation 
           <Text style={styles.title}>{title}</Text>
           <Animated.Image
             style={styles.banner(scrollA)}
-            source={require("../../../assets/identity_gender.png")}
+            source={require("../../../assets/sticker1u.png")}
           />
         </View>
 
@@ -51,7 +54,7 @@ export default function IdentityCategory({ category, title, message, navigation 
           </View>
 
           <View alignItems="center" style={styles.parent}>
-            <SButton text={"Female"} />
+            <SButton text={"Female"} colortag={"#F08247"} />
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
@@ -198,15 +201,16 @@ const styles = StyleSheet.create({
   },
   title: {
     paddingTop: 50,
-    paddingRight: 90,
-    paddingLeft: 90,
-    paddingBottom: 30,
-    fontFamily: "Avenir",
-    fontSize: 50,
+    paddingRight: 60,
+    paddingLeft: 60,
+    paddingBottom: 10,
+    fontFamily: "GraphikWide-Black",
+    fontSize: 38,
     fontWeight: "bold",
     justifyContent: "center",
     textAlign: "center",
     borderRadius: 100,
+    color: "white",
   },
 
   pronouns: {
@@ -234,7 +238,7 @@ const styles = StyleSheet.create({
 
   banner: (scrollA) => ({
     justifyContent: "center",
-    height: 300,
+    height: 350,
     width: "100%",
 
     transform: [

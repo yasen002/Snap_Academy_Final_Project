@@ -12,7 +12,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import CButton from "../../../typeButtons";
 import SButton from "../../../smallButtons";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import ActionButton from './button/ActionButton';
+import ActionButton from "./button/ActionButton";
 
 const BANNER_H = 350;
 
@@ -31,7 +31,7 @@ export default function PronounCategory({ category, title, message }) {
           <Text style={styles.title}>{title}</Text>
           <Animated.Image
             style={styles.banner(scrollA)}
-            source={require("../../../assets/identity_pronoun.png")}
+            source={require("../../../assets/sticker2.png")}
           />
         </View>
 
@@ -48,7 +48,7 @@ export default function PronounCategory({ category, title, message }) {
           </View>
 
           <View alignItems="center" style={styles.parent}>
-            <SButton text={"She/Her"} />
+            <SButton text={"She/Her"} colortag={"yellow"} />
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
@@ -196,15 +196,16 @@ const styles = StyleSheet.create({
   },
   title: {
     paddingTop: 50,
-    paddingRight: 90,
-    paddingLeft: 90,
-    paddingBottom: 30,
-    fontFamily: "Avenir",
-    fontSize: 50,
+    paddingRight: 60,
+    paddingLeft: 60,
+    paddingBottom: 10,
+    fontFamily: "GraphikWide-Black",
+    fontSize: 38,
     fontWeight: "bold",
     justifyContent: "center",
     textAlign: "center",
     borderRadius: 100,
+    color: "white",
   },
 
   pronouns: {
@@ -232,7 +233,7 @@ const styles = StyleSheet.create({
 
   banner: (scrollA) => ({
     justifyContent: "center",
-    height: 300,
+    height: 350,
     width: "100%",
 
     transform: [

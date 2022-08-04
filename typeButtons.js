@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
@@ -18,20 +16,20 @@ const styles = StyleSheet.create({
     width: "60%",
     height: 80,
     borderRadius: 20,
-    position: 'relative',
+    position: "relative",
     top: -20,
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowColor: "rgba(0, 0, 0, 0.1)",
     shadowOpacity: 0.8,
     elevation: 6,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
-    
+    shadowRadius: 15,
+    shadowOffset: { width: 1, height: 13 },
   },
   text: {
-    fontSize: 30,
+    fontSize: 35,
     color: "black",
     textAlign: "center",
     fontWeight: "bold",
+    fontFamily: "Graphik-Semibold",
   },
 });
 export default CButton;
