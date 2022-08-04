@@ -21,10 +21,10 @@ export default function SpotlightScreen({ navigation }) {
       <Text>Hi from SpotLight</Text>
     </View> */}
 
-      {/* <ScrollView style={{ backgroundColor: "#fae268" }}>
+      <ScrollView style={{ backgroundColor: "#fae268" }}>
         <Edit />
-      </ScrollView> */}
-      <IdentityMain />
+      </ScrollView>
+      {/* <IdentityMain /> */}
     </>
   );
 }

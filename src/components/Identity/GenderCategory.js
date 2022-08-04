@@ -37,7 +37,7 @@ export default function IdentityCategory({
           <Text style={styles.title}>{title}</Text>
           <Animated.Image
             style={styles.banner(scrollA)}
-            source={require("../../../assets/sticker1u.png")}
+            source={require("../../../assets/sticker1.png")}
           />
         </View>
 
