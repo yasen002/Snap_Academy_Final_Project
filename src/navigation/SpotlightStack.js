@@ -11,7 +11,8 @@ export default function SpotlightStack({ navigation }) {
   return (
     <Stack.Navigator>
       <Stack.Screen name="SpotlightStatBar" component={SpotlightScreen} options={{headerShown:false}} />
-      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerTransparent:true}}/>
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{  headerShown: false,headerTransparent:true}}/>
+      <Stack.Screen name="Identity" component={IdentityScreen} options={{title: "  ",headerBackTitleVisible: false, headerTransparent:true, tabBarShowLabel: false}} />
     </Stack.Navigator>
   );
 }

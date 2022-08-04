@@ -1,10 +1,11 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import {  Text } from 'react-native'
+import IdentityMain from "../components/Identity/IdentityMain";
 
 export default function IdentityScreen() {
   return (
-    <View>
-        <Text>Hi from Identity</Text>
-    </View>
+    <>
+    <IdentityMain/>
+    </>
   )
 }

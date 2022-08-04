@@ -31,7 +31,7 @@ export default function PronounCategory({ category, title, message }) {
           <Text style={styles.title}>{title}</Text>
           <Animated.Image
             style={styles.banner(scrollA)}
-            source={require("../../../assets/bitmoji2.png")}
+            source={require("../../../assets/identity_pronoun.png")}
           />
         </View>
 
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
 
   container: {
     alignItems: "center",
-    backgroundColor: "yellow",
+    backgroundColor: "#9BC566",
     height: Dimensions.get("window").height,
     width: Dimensions.get("window").width,
     fontFamily: "Avenir",

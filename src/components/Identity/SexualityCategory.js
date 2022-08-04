@@ -32,7 +32,7 @@ export default function SexualityCategory({ category, title, message }) {
           <Text style={styles.title}>{title}</Text>
           <Animated.Image
             style={styles.banner(scrollA)}
-            source={require("../../../assets/bitmoji2.png")}
+            source={require("../../../assets/identity_sexuality.png")}
           />
         </View>
 
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
 
   container: {
     alignItems: "center",
-    backgroundColor: "yellow",
+    backgroundColor: "#3f6eb3",
     height: Dimensions.get("window").height,
     width: Dimensions.get("window").width,
     fontFamily: "Avenir",

@@ -5,7 +5,8 @@ import PronounCategory from "./PronounCategory";
 import SexualityCategory from "./SexualityCategory";
 import EthnicityCategory from "./EthnicityCategory";
 
-export default function IdentityMain({ navigation }) {
+export default function IdentityMain() {
+
   return (
     <Swiper>
       <GenderCategory

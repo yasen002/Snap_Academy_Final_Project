@@ -30,7 +30,7 @@ export default function EthnicityCategory({category, title, message}) {
             <Text style={styles.title}>{title}</Text>
             <Animated.Image
               style={styles.banner(scrollA)}
-              source={require('../../../assets/bitmoji2.png')} 
+              source={require('../../../assets/identity_ethnicity.png')} 
             />
           </View>
 
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
      
       container: {
         alignItems: 'center',
-        backgroundColor: 'yellow',
+        backgroundColor: '#F09AB8',
         height: Dimensions.get('window').height,
         width: Dimensions.get('window').width,
         fontFamily:'Avenir',

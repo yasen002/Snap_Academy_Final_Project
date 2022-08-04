@@ -13,11 +13,13 @@ import CButton from "../../../typeButtons";
 import SButton from "../../../smallButtons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ActionButton from './button/ActionButton';
-
 const BANNER_H = 350;
 
-export default function IdentityCategory({ category, title, message }) {
+export default function IdentityCategory({ category, title, message, navigation }) {
   const scrollA = useRef(new Animated.Value(0)).current;
+
+ 
+
   return (
     <View style={styles.container}>
       <Animated.ScrollView
@@ -32,7 +34,7 @@ export default function IdentityCategory({ category, title, message }) {
           <Text style={styles.title}>{title}</Text>
           <Animated.Image
             style={styles.banner(scrollA)}
-            source={require("../../../assets/bitmoji2.png")}
+            source={require("../../../assets/identity_gender.png")}
           />
         </View>
 
@@ -181,7 +183,7 @@ const styles = StyleSheet.create({
 
   container: {
     alignItems: "center",
-    backgroundColor: "yellow",
+    backgroundColor: "#F08247",
     height: Dimensions.get("window").height,
     width: Dimensions.get("window").width,
     fontFamily: "Avenir",
