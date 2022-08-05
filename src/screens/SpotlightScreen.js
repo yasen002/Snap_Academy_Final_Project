@@ -4,16 +4,19 @@ import { View, ScrollView } from "react-native";
 import List from "../components/friendList/List";
 import Option from "../components/edit/Option";
 import Edit from "../components/edit/Edit";
+import { useSelector } from 'react-redux'
 
 import IdentityMain from "../components/Identity/IdentityMain";
 import GenderCategory from "../components/Identity/GenderCategory";
 
 export default function SpotlightScreen({ navigation }) {
+  const identityActive = useSelector((state) => state.identity.identityActive)
+
   return (
     <>
       {/* <IdentityMain /> */}
       {/* <List /> */}
-      <IdentityMain />
+      {identityActive===true ? <IdentityMain />:<ScrollView><Edit/></ScrollView>  }
 
       {/* <View >
       <View style={{ height:93}}>

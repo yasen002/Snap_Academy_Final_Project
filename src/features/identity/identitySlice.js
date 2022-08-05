@@ -77,7 +77,7 @@ export const identitySlice = createSlice({
       state.pronoun =  state.pronounOptions[load[1]].value
     },
     activateIdentity: (state) => {
-      state.identityActive =  true
+      state.identityActive = !state.identityActive
     },
   },
 })
