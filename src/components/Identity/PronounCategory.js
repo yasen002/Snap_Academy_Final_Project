@@ -143,6 +143,13 @@ const styles = StyleSheet.create({
     marginRight: -200,
   },
 
+  templateLeftGhost: {
+    marginTop: 30,
+    width: 150,
+    height: 150,
+    marginRight: 200,
+  },
+
   buttonStyle: {
     justifyContent: "center",
   },
@@ -199,6 +206,7 @@ const styles = StyleSheet.create({
   },
   title: {
     position: "relative",
+    zIndex: 1,
     top: 60,
     paddingTop: 10,
     paddingRight: 60,

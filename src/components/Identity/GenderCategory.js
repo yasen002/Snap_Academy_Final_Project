@@ -31,6 +31,7 @@ export default function IdentityCategory({
           { useNativeDriver: true }
         )}
         scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
       >
         {/* Drawer top  */}
         <View style={styles.bannerContainer}>
@@ -54,13 +55,10 @@ export default function IdentityCategory({
           </View>
 
           <View alignItems="center" style={styles.parent}>
-            <SButton
-              text={"Female"}
-              colortag={{ backgroundColor: "#F08247" }}
-            />
+            <SButton text={"Female"} colortag={"#F08247"} />
           </View>
 
-          <View flexDirection="row" justifyContent="center" paddingTop={10}>
+          <View flexDirection="row" paddingTop={10}>
             <ActionButton icon="ios-camera-outline" />
             <ActionButton icon="ios-pencil-outline" />
             <ActionButton icon="ios-people-outline" />
@@ -90,11 +88,19 @@ export default function IdentityCategory({
 
           <Image
             source={require("../../../assets/ilyghostsmall.png")}
-            style={styles.templateLeft}
+            style={styles.templateLeftGhost}
           ></Image>
           <Image
-            source={require("../../../assets/sticker.png")}
-            style={styles.templateRight}
+            source={require("../../../assets/rainboww.png")}
+            style={styles.templateRightRainbow}
+          ></Image>
+          <Image
+            source={require("../../../assets/iamuniqueheart.png")}
+            style={styles.templateLeftHeart}
+          ></Image>
+          <Image
+            source={require("../../../assets/pronounssticker.png")}
+            style={styles.templateRightPronouns}
           ></Image>
 
           <View paddingTop={300} justifyContent="center" alignItems="center">
@@ -119,6 +125,30 @@ export default function IdentityCategory({
 }
 
 const styles = StyleSheet.create({
+  templateRightPronouns: {
+    marginTop: 30,
+    width: 300,
+    height: 190,
+    marginRight: -110,
+  },
+  templateLeftHeart: {
+    marginTop: 30,
+    width: 300,
+    height: 250,
+    marginRight: 120,
+  },
+  templateRightRainbow: {
+    marginTop: 30,
+    width: 300,
+    height: 150,
+    marginRight: -110,
+  },
+  templateLeftGhost: {
+    marginTop: 30,
+    width: 300,
+    height: 250,
+    marginRight: 150,
+  },
   iconBit: {
     width: 50,
     height: 50,
@@ -130,6 +160,7 @@ const styles = StyleSheet.create({
     // justifyContent: "center", // ignore this - we'll come back to it
     flexDirection: "row",
   },
+
   iconFlex: {
     backgroundColor: "#7cb48f",
     width: 100,

@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 const CButton = ({ text }) => {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity disabled={true} style={styles.button}>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
