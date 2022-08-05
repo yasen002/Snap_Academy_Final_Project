@@ -13,11 +13,15 @@ import CButton from "../../../typeButtons";
 import SButton from "./button/SmallButtons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ActionButton from "./button/ActionButton";
+import { useSelector } from 'react-redux'
+
 
 const BANNER_H = 350;
 
 export default function SexualityCategory({ category, title, message }) {
   const scrollA = useRef(new Animated.Value(0)).current;
+  const sexuality = useSelector((state) => state.identity.sexuality)
+
   return (
     <View style={styles.container}>
       <Animated.ScrollView
@@ -49,7 +53,7 @@ export default function SexualityCategory({ category, title, message }) {
           </View>
 
           <View alignItems="center" style={styles.parent}>
-            <SButton text={"Female"} colortag={"#F08247"} />
+            <SButton text={sexuality} colortag={"#F08247"} />
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>

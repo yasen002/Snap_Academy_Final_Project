@@ -13,11 +13,14 @@ import CButton from "../../../typeButtons";
 import SButton from "./button/SmallButtons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ActionButton from "./button/ActionButton";
+import { useSelector } from 'react-redux'
 
 const BANNER_H = 350;
 
 export default function PronounCategory({ category, title, message }) {
   const scrollA = useRef(new Animated.Value(0)).current;
+  const pronoun = useSelector((state) => state.identity.pronoun)
+
   return (
     <View style={styles.container}>
       <Animated.ScrollView
@@ -48,7 +51,7 @@ export default function PronounCategory({ category, title, message }) {
           </View>
 
           <View alignItems="center" style={styles.parent}>
-            <SButton text={"She/Her"} colortag={"yellow"} />
+            <SButton text={pronoun} colortag={"yellow"} />
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>

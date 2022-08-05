@@ -13,11 +13,15 @@ import CButton from "../../../typeButtons";
 import SButton from "./button/SmallButtons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ActionButton from "./button/ActionButton";
+import { useSelector, useDispatch } from 'react-redux'
 
 const BANNER_H = 350;
 
 export default function EthnicityCategory({ category, title, message }) {
   const scrollA = useRef(new Animated.Value(0)).current;
+  const ethnicity = useSelector((state) => state.identity.ethnicity)
+
+
   return (
     <View style={styles.container}>
       <Animated.ScrollView
@@ -48,7 +52,7 @@ export default function EthnicityCategory({ category, title, message }) {
           </View>
 
           <View alignItems="center" style={styles.parent}>
-            <SButton text={"Black"} colortag={"#F08247"} />
+            <SButton text={ethnicity} colortag={"#F08247"} />
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>

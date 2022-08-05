@@ -3,9 +3,9 @@ import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import db from "../../firebase";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StatBar from "../components/StatBar";
-
+import GenderCategory from "../components/Identity/GenderCategory"
 //just to test out redux
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 export default function ChatScreen({ navigation }) {
   
@@ -23,7 +23,7 @@ export default function ChatScreen({ navigation }) {
     const querySnapshot = await getDocs(collection(db, "Chats"));
     querySnapshot.forEach((doc) => {
       setUsers((users) => [...users, doc.id]);
-    });
+    }); 
   }
 
   useEffect(() => {
@@ -31,43 +31,46 @@ export default function ChatScreen({ navigation }) {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <View style={{ height: 93 }}>
-        <StatBar screen="map" navigation={navigation} />
-      </View>
-      <Text>Hi from chat</Text>
-      <Text>Gender: {gender}</Text>
-      <Text>ethnicity: {ethnicity}</Text>
-      <Text>pronoun: {pronoun}</Text>
-      <Text>sexuality: {sexuality}</Text>
-      {users?.map((user) => {
-        return (
-          <TouchableOpacity
-            style={styles.userButton}
-            onPress={() => {
-              navigation.navigate("Conversation", {
-                userId: user,
-              });
-            }}
-            key={user}
-          >
-            <Ionicons
-              style={styles.userIcon}
-              name="ios-person-outline"
-              size={36}
-              color="lightgrey"
-            />
-            <Text style={styles.userName}> {user} </Text>
-            <Ionicons
-              style={styles.userCamera}
-              name="ios-camera-outline"
-              size={24}
-              color="lightgrey"
-            />
-          </TouchableOpacity>
-        );
-      })}
-    </View>
+    <>
+    <GenderCategory/>
+    </>
+    // <View style={styles.container}>
+    //   <View style={{ height: 93 }}>
+    //     <StatBar screen="map" navigation={navigation} />
+    //   </View>
+    //   <Text>Hi from chat</Text>
+    //   <Text>Gender: {gender}</Text>
+    //   <Text>ethnicity: {ethnicity}</Text>
+    //   <Text>pronoun: {pronoun}</Text>
+    //   <Text>sexuality: {sexuality}</Text>
+    //   {users?.map((user) => {
+    //     return (
+    //       <TouchableOpacity
+    //         style={styles.userButton}
+    //         onPress={() => {
+    //           navigation.navigate("Conversation", {
+    //             userId: user,
+    //           });
+    //         }}
+    //         key={user}
+    //       >
+    //         <Ionicons
+    //           style={styles.userIcon}
+    //           name="ios-person-outline"
+    //           size={36}
+    //           color="lightgrey"
+    //         />
+    //         <Text style={styles.userName}> {user} </Text>
+    //         <Ionicons
+    //           style={styles.userCamera}
+    //           name="ios-camera-outline"
+    //           size={24}
+    //           color="lightgrey"
+    //         />
+    //       </TouchableOpacity>
+    //     );
+    //   })}
+    // </View>
   );
 }
 
