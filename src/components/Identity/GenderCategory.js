@@ -54,7 +54,10 @@ export default function IdentityCategory({
           </View>
 
           <View alignItems="center" style={styles.parent}>
-            <SButton text={"Female"} colortag={"#F08247"} />
+            <SButton
+              text={"Female"}
+              colortag={{ backgroundColor: "#F08247" }}
+            />
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
@@ -63,19 +66,30 @@ export default function IdentityCategory({
             <ActionButton icon="ios-people-outline" />
           </View>
 
-          <Text style={styles.title}>{message}</Text>
           <Image
-            source={require("../../../assets/sticker.png")}
+            source={require("../../../assets/identityisuptoyou.png")}
+            style={{
+              marginTop: 10,
+              height: 200,
+              width: 340,
+              paddingRight: 10,
+              paddingLeft: 10,
+              alignContent: "center",
+              alignSelf: "center",
+            }}
+          ></Image>
+          <Image
+            source={require("../../../assets/beesticker.png")}
             style={styles.templateLeft}
           ></Image>
 
           <Image
-            source={require("../../../assets/sticker.png")}
+            source={require("../../../assets/butterflyevolve.png")}
             style={styles.templateRight}
           ></Image>
 
           <Image
-            source={require("../../../assets/sticker.png")}
+            source={require("../../../assets/ilyghostsmall.png")}
             style={styles.templateLeft}
           ></Image>
           <Image
@@ -135,14 +149,14 @@ const styles = StyleSheet.create({
 
   templateLeft: {
     marginTop: 30,
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 300,
     marginRight: 200,
   },
   templateRight: {
-    width: 150,
-    height: 150,
-    marginRight: -200,
+    width: 300,
+    height: 300,
+    marginRight: -140,
   },
 
   buttonStyle: {
@@ -200,10 +214,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   title: {
-    paddingTop: 50,
+    position: "relative",
+    top: 60,
+    paddingTop: 10,
     paddingRight: 60,
     paddingLeft: 60,
-    paddingBottom: 10,
+    // paddingBottom: 10, CHANGED
     fontFamily: "GraphikWide-Black",
     fontSize: 38,
     fontWeight: "bold",
@@ -239,6 +255,7 @@ const styles = StyleSheet.create({
   banner: (scrollA) => ({
     justifyContent: "center",
     height: 350,
+    marginBottom: 20, // putting it more up
     width: "100%",
 
     transform: [

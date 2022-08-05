@@ -195,10 +195,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   title: {
-    paddingTop: 50,
+    position: "relative",
+    top: 60,
+    paddingTop: 10,
     paddingRight: 60,
     paddingLeft: 60,
-    paddingBottom: 10,
+    // paddingBottom: 10, CHANGED
     fontFamily: "GraphikWide-Black",
     fontSize: 38,
     fontWeight: "bold",
@@ -234,6 +236,7 @@ const styles = StyleSheet.create({
   banner: (scrollA) => ({
     justifyContent: "center",
     height: 350,
+    marginTop: 20,
     width: "100%",
 
     transform: [

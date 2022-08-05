@@ -6,6 +6,7 @@ import Option from "../components/edit/Option";
 import Edit from "../components/edit/Edit";
 
 import IdentityMain from "../components/Identity/IdentityMain";
+import GenderCategory from "../components/Identity/GenderCategory";
 
 export default function SpotlightScreen({ navigation }) {
   return (
@@ -22,7 +23,12 @@ export default function SpotlightScreen({ navigation }) {
     </View> */}
 
       <ScrollView style={{ backgroundColor: "#fae268" }}>
-        <Edit />
+        {/* <Edit /> */}
+        <GenderCategory
+          category="Gender"
+          title="Be You"
+          message="Identity is up to you"
+        />
       </ScrollView>
       {/* <IdentityMain /> */}
     </>
