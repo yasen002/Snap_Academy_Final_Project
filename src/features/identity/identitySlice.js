@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-
 const identityOptions = {
   genderOptions: [
     { key: "gender-1", value: "Man" },
@@ -36,14 +35,11 @@ const identityOptions = {
     { key: "ethnicity-7", value: "Preference" },
     { key: "ethnicity-8", value: "Other" },
   ],
-
 }
-
-
-
 
 const initialState = {
   value: 7,
+  identityActive:false,
   gender:"",
   ethnicity:"",
   sexuality:"",
@@ -80,10 +76,13 @@ export const identitySlice = createSlice({
       let load = action.payload;
       state.pronoun =  state.pronounOptions[load[1]].value
     },
+    activateIdentity: (state) => {
+      state.identityActive =  true
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount, updateGender , updateEthnicity, updatePronoun, updateSexuality} = identitySlice.actions
+export const { increment, decrement, incrementByAmount, updateGender , updateEthnicity, updatePronoun, updateSexuality, activateIdentity} = identitySlice.actions
 
 export default identitySlice.reducer

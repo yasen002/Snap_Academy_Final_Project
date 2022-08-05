@@ -11,7 +11,6 @@ const SButton = ({ text, colortag }) => {
 
 const styles = StyleSheet.create({
   button: {
-    // marginRight: 5, // space between the yellow and pink button
     padding: 16,
     width: "30%",
     height: 50,
