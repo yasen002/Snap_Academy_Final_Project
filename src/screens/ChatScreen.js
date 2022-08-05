@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import db from "../../firebase";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StatBar from "../components/StatBar";
-import GenderCategory from "../components/Identity/GenderCategory"
+import IdentityMain from "../components/Identity/IdentityMain"
 //just to test out redux
 import { useSelector } from 'react-redux'
 
@@ -32,7 +32,8 @@ export default function ChatScreen({ navigation }) {
 
   return (
     <>
-    <GenderCategory/>
+    {/* <GenderCategory/> */}
+    <IdentityMain/>
     </>
     // <View style={styles.container}>
     //   <View style={{ height: 93 }}>

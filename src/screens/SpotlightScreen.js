@@ -13,7 +13,7 @@ export default function SpotlightScreen({ navigation }) {
     <>
       {/* <IdentityMain /> */}
       {/* <List /> */}
-      {/* <IdentityMain /> */}
+      <IdentityMain />
 
       {/* <View >
       <View style={{ height:93}}>
@@ -21,15 +21,15 @@ export default function SpotlightScreen({ navigation }) {
       </View>
       <Text>Hi from SpotLight</Text>
     </View> */}
-
-      <ScrollView style={{ backgroundColor: "#fae268" }}>
         {/* <Edit /> */}
+
+      {/* <ScrollView style={{ backgroundColor: "#fae268" }}>
         <GenderCategory
           category="Gender"
           title="Be You"
           message="Identity is up to you"
         />
-      </ScrollView>
+      </ScrollView> */}
       {/* <IdentityMain /> */}
     </>
   );

@@ -13,6 +13,8 @@ import CButton from "../../../typeButtons";
 import SButton from "./button/SmallButtons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ActionButton from "./button/ActionButton";
+import { useSelector } from 'react-redux'
+
 const BANNER_H = 350;
 
 export default function IdentityCategory({
@@ -22,6 +24,7 @@ export default function IdentityCategory({
   navigation,
 }) {
   const scrollA = useRef(new Animated.Value(0)).current;
+  const gender = useSelector((state) => state.identity.gender)
 
   return (
     <View style={styles.container}>
@@ -55,7 +58,7 @@ export default function IdentityCategory({
           </View>
 
           <View alignItems="center" style={styles.parent}>
-            <SButton text={"Female"} colortag={"#F08247"} />
+            <SButton text={gender} colortag={"#F08247"} />
           </View>
 
           <View flexDirection="row" paddingTop={10}>
