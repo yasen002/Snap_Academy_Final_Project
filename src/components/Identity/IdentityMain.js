@@ -7,25 +7,29 @@ import EthnicityCategory from "./EthnicityCategory";
 
 export default function IdentityMain() {
   return (
-    <Swiper>
+    <Swiper
+      style={{ backgroundColor: "yellow" }}
+      loop={true}
+      controlsProps={{ prevPos: false, nextPos: false }}
+    >
       <GenderCategory
         category="Gender"
-        title="My Identities"
+        title="Be You"
         message="Identity is up to you"
       />
       <PronounCategory
         category="Pronoun"
-        title="My Identities"
+        title="Be You"
         message="My identity is my super power"
       />
       <SexualityCategory
         category="Sexuality"
-        title="My Identities"
+        title="Be You"
         message="Some message for Sexuality Page"
       />
       <EthnicityCategory
         category="Ethnicity"
-        title="My Identities"
+        title="Be You"
         message="Some message for Ethnicity Page"
       />
     </Swiper>

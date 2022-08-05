@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
   },
   title: {
     position: "relative",
+    zIndex: 1,
     top: 60,
     paddingTop: 10,
     paddingRight: 60,
