@@ -13,7 +13,7 @@ import CButton from "../../../typeButtons";
 import SButton from "./button/SmallButtons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ActionButton from "./button/ActionButton";
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 
 const BANNER_H = 350;
 
@@ -24,7 +24,7 @@ export default function IdentityCategory({
   navigation,
 }) {
   const scrollA = useRef(new Animated.Value(0)).current;
-  const gender = useSelector((state) => state.identity.gender)
+  const gender = useSelector((state) => state.identity.gender);
 
   return (
     <View style={styles.container}>
@@ -79,6 +79,7 @@ export default function IdentityCategory({
               alignSelf: "center",
             }}
           ></Image>
+
           <Image
             source={require("../../../assets/beesticker.png")}
             style={styles.templateLeft}
