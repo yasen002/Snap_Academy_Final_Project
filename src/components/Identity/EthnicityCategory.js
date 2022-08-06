@@ -55,10 +55,7 @@ export default function EthnicityCategory({ category, title, message }) {
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
-            <ActionButton
-              icon="ios-camera-outline"
-              style={{ backgroundColor: "orange" }}
-            />
+            <ActionButton icon="ios-camera-outline"/>
             <ActionButton icon="ios-pencil-outline" />
             <ActionButton icon="ios-people-outline" />
           </View>

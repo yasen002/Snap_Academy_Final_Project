@@ -1,13 +1,21 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import {useDispatch } from 'react-redux'
+import { activateIdentity } from "./src/features/identity/identitySlice";
 
-const completeButton = ({ text }) => {
+export default function CompleteButton({text}) {
+  const dispatch = useDispatch();
+
+  const completeEditPage = ()=>{
+    dispatch(activateIdentity())
+  }
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity onPress={completeEditPage} style={styles.button}>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
-};
+}
+
 
 const styles = StyleSheet.create({
   button: {
@@ -26,4 +34,3 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-export default completeButton;
