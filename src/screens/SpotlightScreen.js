@@ -12,11 +12,15 @@ import GenderCategory from "../components/Identity/GenderCategory";
 export default function SpotlightScreen({ navigation }) {
   const identityActive = useSelector((state) => state.identity.identityActive)
 
+  const navHandler = (page)=>{
+    navigation.navigate(page);
+  }
+
   return (
     <>
       {/* <IdentityMain /> */}
       {/* <List /> */}
-      {identityActive===true ? <IdentityMain />:<ScrollView><Edit/></ScrollView>  }
+      {identityActive===true ?<IdentityMain navHandler={navHandler} />:<ScrollView><Edit/></ScrollView>  }
 
       {/* <View >
       <View style={{ height:93}}>

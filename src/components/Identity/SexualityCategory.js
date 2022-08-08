@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 
 const BANNER_H = 350;
 
-export default function SexualityCategory({ category, title, message }) {
+export default function SexualityCategory({ category, title, navHandler}) {
   const scrollA = useRef(new Animated.Value(0)).current;
   const sexuality = useSelector((state) => state.identity.sexuality);
 
@@ -56,9 +56,9 @@ export default function SexualityCategory({ category, title, message }) {
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
-            <ActionButton icon="ios-camera-outline" />
-            <ActionButton icon="ios-pencil-outline" />
-            <ActionButton icon="ios-people-outline" />
+            <ActionButton icon="ios-camera-outline" navHandler={navHandler}/>
+            <ActionButton icon="ios-pencil-outline" navHandler={navHandler} />
+            <ActionButton icon="ios-people-outline" navHandler={navHandler} />
           </View>
 
           <Image

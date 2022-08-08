@@ -13,6 +13,7 @@ export default function StoriesStack({ navigation }) {
       <Stack.Screen name="Stories" component={StoriesScreen} options={{headerShown:false}} />
       <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false,headerTransparent:true}}/>
       <Stack.Screen name="Identity" component={IdentityScreen} options={{title: "  ",headerBackTitleVisible: false, headerTransparent:true, tabBarShowLabel: false}} />
+      <Stack.Screen name="Friend" component={FriendsScreen} options={{title:"Friends", headerTransparent:true}}/>
 
     </Stack.Navigator>
   );
