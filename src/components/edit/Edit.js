@@ -56,7 +56,7 @@ export default function Edit() {
           paddingTop: 80,
         }}
       >
-        My {"\n"}Identities
+        Be You
       </Text>
       <Text
         style={{

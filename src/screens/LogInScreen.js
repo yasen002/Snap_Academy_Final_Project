@@ -19,8 +19,6 @@ export default function LoginScreen({ navigation }) {
   const auth = getAuth();
 
   async function handleSubmit() {
-    console.log("handle submit envoked!!");
-
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;

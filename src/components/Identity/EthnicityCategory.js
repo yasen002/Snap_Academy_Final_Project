@@ -17,7 +17,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const BANNER_H = 350;
 
-export default function EthnicityCategory({ category, title, message }) {
+export default function EthnicityCategory({ category, title, navHandler }) {
   const scrollA = useRef(new Animated.Value(0)).current;
   const ethnicity = useSelector((state) => state.identity.ethnicity);
 
@@ -55,9 +55,9 @@ export default function EthnicityCategory({ category, title, message }) {
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
-            <ActionButton icon="ios-camera-outline"/>
-            <ActionButton icon="ios-pencil-outline" />
-            <ActionButton icon="ios-people-outline" />
+          <ActionButton icon="ios-camera-outline" navHandler={navHandler}/>
+            <ActionButton icon="ios-pencil-outline" navHandler={navHandler} />
+            <ActionButton icon="ios-people-outline" navHandler={navHandler} />
           </View>
 
           <Image

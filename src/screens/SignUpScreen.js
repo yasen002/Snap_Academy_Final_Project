@@ -27,8 +27,6 @@ export default function LoginScreen({ navigation }) {
   }
 
   async function handleSubmit() {
-    console.log("handle submit envoked!!");
-
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // creates user using setDoc firebase

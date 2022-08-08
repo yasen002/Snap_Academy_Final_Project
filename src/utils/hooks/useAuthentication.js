@@ -21,7 +21,6 @@ export function useAuthentication() {
           // get Doc from User collection
           getDoc(doc(db, "Users", user.uid))
             .then((userData) => {
-              // console.log("User Doc", userData.data());
               setUserData(userData.data());
             })
             .catch((error) => {
