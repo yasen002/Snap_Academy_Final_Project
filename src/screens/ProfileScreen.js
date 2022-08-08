@@ -6,7 +6,7 @@ import ProfileCard from '../components/profile/ProfileCard';
 
 
 
-export default function ProfileScreen({ navigation, route }) {
+export default function ProfileScreen({ navigation }) {
   const userName="Kayla"
   const SnapAccount= "Kayla369"
 

@@ -5,9 +5,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 import StoriesScreen from "../screens/StoriesScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import IdentityScreen from "../screens/IdentityScreen";
-const Stack = createStackNavigator();
+import FriendsScreen from "../screens/FriendsScreen";
+
 
 export default function StoriesStack({ navigation }) {
+  const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
       <Stack.Screen name="Stories" component={StoriesScreen} options={{headerShown:false}} />

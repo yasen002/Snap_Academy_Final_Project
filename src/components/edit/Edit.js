@@ -14,6 +14,11 @@ export default function Edit() {
   const pronounOptions = useSelector((state) => state.identity.pronounOptions)
   const ethnicityOptions = useSelector((state) => state.identity.ethnicityOptions)
   const sexualityOptions = useSelector((state) => state.identity.sexualityOptions)
+
+  const gender = useSelector((state) => state.identity.gender)
+  const ethnicity = useSelector((state) => state.identity.ethnicity)
+  const sexuality = useSelector((state) => state.identity.sexuality)
+  const pronoun = useSelector((state) => state.identity.pronoun)
   const dispatch = useDispatch()
 
   const handleEdit=(selected)=>{
@@ -72,26 +77,26 @@ export default function Edit() {
       </Text>
       <Option
         title="Gender"
-        inputText="Enter Gender"
+        inputText={gender===""?"Enter Gender":gender }
         handleEdit={handleEdit}
         data={genderOptions}
       />
       <Option
         title="Pronouns"
-        inputText="Enter Pronouns"
+        inputText={pronoun===""?"Enter Pronouns":pronoun}
         handleEdit={handleEdit}
         data={pronounOptions}
       />
 
       <Option
         title="Sexuality"
-        inputText="Enter Sexuality"
+        inputText={sexuality===""?"Enter Sexuality":sexuality}
         handleEdit={handleEdit}
         data={sexualityOptions}
       />
       <Option
         title="Ethnicity"
-        inputText="Enter Ethnicity"
+        inputText={ethnicity===""?"Enter Ethnicity":ethnicity}
         handleEdit={handleEdit}
         data={ethnicityOptions}
       />

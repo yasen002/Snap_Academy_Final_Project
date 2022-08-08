@@ -1,9 +1,10 @@
 import React from 'react'
-import {  Text } from 'react-native'
+import {  ScrollView } from 'react-native'
 import IdentityMain from "../components/Identity/IdentityMain";
-
+import { useSelector } from 'react-redux';
+import Edit from '../components/edit/Edit';
 export default function IdentityScreen({ navigation }) {
-  console.log(navigation, "this navigation")
+  const identityActive = useSelector((state) => state.identity.identityActive);
 
   const navHandler = (page)=>{
     navigation.navigate(page);
@@ -11,7 +12,7 @@ export default function IdentityScreen({ navigation }) {
 
   return (
     <>
-    <IdentityMain navHandler={navHandler} />
+      {identityActive===true ?<IdentityMain navHandler={navHandler} />:<ScrollView><Edit/></ScrollView>  }
     </>
   )
 }
