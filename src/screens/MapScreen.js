@@ -38,16 +38,12 @@ export default function MapScreen({ navigation }) {
       }
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
-      console.log("location is : ", location)
       setCurrentRegion({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       }); 
-
-
-
 
      } catch (error) {
       console.log("MapScreen.js error: ", error)
@@ -69,7 +65,6 @@ export default function MapScreen({ navigation }) {
         <TouchableOpacity
           style={styles.userLocation}
           onPress={() => {
-            console.log("Go to user location!");
             const { latitude, longitude } = location.coords;
             setCurrentRegion({ ...currentRegion, latitude, longitude });
           }}

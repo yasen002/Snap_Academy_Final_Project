@@ -6,7 +6,7 @@ const SButton = ({ text, colortag }) => {
     <TouchableOpacity
       style={{
         padding: 16,
-        width: "30%",
+        minWidth: "30%",
         height: 55,
         borderRadius: 15, //20
         marginTop: -10,

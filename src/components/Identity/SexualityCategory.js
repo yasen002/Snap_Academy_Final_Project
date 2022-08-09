@@ -122,9 +122,9 @@ export default function SexualityCategory({ category, title, message }) {
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
-            <ActionButton icon="ios-camera-outline" />
-            <ActionButton icon="ios-pencil-outline" />
-            <ActionButton icon="ios-people-outline" />
+            <ActionButton icon="ios-camera-outline" navHandler={navHandler} />
+            <ActionButton icon="ios-pencil-outline" navHandler={navHandler} />
+            <ActionButton icon="ios-people-outline" navHandler={navHandler} />
           </View>
 
           <Image

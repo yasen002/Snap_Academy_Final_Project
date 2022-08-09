@@ -7,11 +7,13 @@ import ProfileCard from '../components/profile/ProfileCard';
 
 
 export default function ProfileScreen({ navigation }) {
-  const userName="Yasen"
-  const SnapAccount= "ysen369"
+  const userName="Kayla"
+  const SnapAccount= "Kayla369"
+
+
 
   return (
-    <ImageBackground source={require("../../assets/profile_background_bitmoji.png")} resizeMode="cover" style={styles.backgroundImage}>
+    <ImageBackground source={require("../../assets/profile_background_bitmoji.jpg")} resizeMode="cover" style={styles.backgroundImage}>
       <View style={ styles.container }>
 
         {/* ----------Top stat bars---------- */}

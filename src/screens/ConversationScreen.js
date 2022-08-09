@@ -14,7 +14,6 @@ export default function ConversationScreen({ navigation, route }) {
 
   useEffect(() => {
     let unsubscribeFromNewSnapshots = onSnapshot(chatRef, (doc) => {
-      console.log("New Snapshot!");
       setMessages(doc.data().messages);
     });
 

@@ -61,6 +61,7 @@ export default function IdentityCategory({
   title,
   message,
   navigation,
+  navHandler,
 }) {
   const scrollA = useRef(new Animated.Value(0)).current;
   const gender = useSelector((state) => state.identity.gender);
@@ -124,9 +125,9 @@ export default function IdentityCategory({
           </View>
 
           <View flexDirection="row" paddingTop={10}>
-            <ActionButton icon="ios-camera-outline" />
-            <ActionButton icon="ios-pencil-outline" />
-            <ActionButton icon="ios-people-outline" />
+            <ActionButton icon="ios-camera-outline" navHandler={navHandler} />
+            <ActionButton icon="ios-pencil-outline" navHandler={navHandler} />
+            <ActionButton icon="ios-people-outline" navHandler={navHandler} />
           </View>
 
           <Image

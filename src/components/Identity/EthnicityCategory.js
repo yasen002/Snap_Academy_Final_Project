@@ -80,7 +80,8 @@ export default function EthnicityCategory({ category, title, message }) {
           </View>
         </View>
         <Text style={{ marginVertical: 30, fontSize: 20, textAlign: "center" }}>
-        Ethnicity is a social group that shares a common culture, religion, or language.
+          Ethnicity is a social group that shares a common culture, religion, or
+          language.
         </Text>
       </ModalPoup>
       <Animated.ScrollView
@@ -119,9 +120,9 @@ export default function EthnicityCategory({ category, title, message }) {
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
-            <ActionButton icon="ios-camera-outline" />
-            <ActionButton icon="ios-pencil-outline" />
-            <ActionButton icon="ios-people-outline" />
+            <ActionButton icon="ios-camera-outline" navHandler={navHandler} />
+            <ActionButton icon="ios-pencil-outline" navHandler={navHandler} />
+            <ActionButton icon="ios-people-outline" navHandler={navHandler} />
           </View>
 
           <Image

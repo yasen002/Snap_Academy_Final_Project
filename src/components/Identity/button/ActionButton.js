@@ -6,7 +6,7 @@ import { activateIdentity } from "../../../features/identity/identitySlice";
 
 
 
-export default function ActionButton({icon}) {
+export default function ActionButton({icon , navHandler}) {
   const dispatch = useDispatch();
   const actionTypes = {
     CAMERA: "camera",
@@ -30,7 +30,7 @@ export default function ActionButton({icon}) {
     dispatch(activateIdentity())
   }
   const friendAction = ()=>{
-
+    navHandler("Friend")
   }
 
 
