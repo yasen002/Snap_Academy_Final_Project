@@ -55,7 +55,7 @@ export default function EthnicityCategory({ category, title, navHandler }) {
           </View>
 
           <View flexDirection="row" justifyContent="center" paddingTop={10}>
-          <ActionButton icon="ios-camera-outline" navHandler={navHandler}/>
+            <ActionButton icon="ios-camera-outline" navHandler={navHandler}/>
             <ActionButton icon="ios-pencil-outline" navHandler={navHandler} />
             <ActionButton icon="ios-people-outline" navHandler={navHandler} />
           </View>
