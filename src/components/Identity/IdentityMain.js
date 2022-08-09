@@ -10,7 +10,7 @@ export default function IdentityMain({navHandler}) {
   return (
     <Swiper
       style={{ backgroundColor: "yellow" }}
-      loop={true}
+      // loop={true}
       controlsProps={{ prevPos: false, nextPos: false }}
     >
       <GenderCategory
