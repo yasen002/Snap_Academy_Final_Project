@@ -9,7 +9,7 @@ export default function IdentityMain() {
   return (
     <Swiper
       style={{ backgroundColor: "yellow" }}
-      loop={true}
+      // loop={true}
       controlsProps={{ prevPos: false, nextPos: false }}
     >
       <GenderCategory
