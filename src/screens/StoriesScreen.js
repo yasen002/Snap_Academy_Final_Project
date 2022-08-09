@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { View, Text, StyleSheet, } from 'react-native'
+import { View, Text, StyleSheet,ImageBackground } from 'react-native'
 import StatBar from '../components/StatBar'
 import { RNCamera , SafeAreaView, TouchableOpacity,} from 'react-native-camera';
 import MyComponent from '../components/MyComponent';
@@ -19,9 +19,7 @@ const StoriesScreen = ({ navigation }) => {
         <StatBar screen="story" navigation={navigation} />
       </View>
         
-        <Text>
-          Stories Page
-        </Text>
+      <ImageBackground source={require("../../assets/discover.png")} resizeMode="cover" style={{width:"100%",height:"100%"}} />
       </View>
   )
 }

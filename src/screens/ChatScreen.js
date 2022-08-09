@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, View, ImageBackground, StyleSheet } from "react-native";
 import db from "../../firebase";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StatBar from "../components/StatBar";
@@ -31,47 +31,14 @@ export default function ChatScreen({ navigation }) {
   }, []);
 
   return (
-    <>
-    {/* <GenderCategory/> */}
-    <IdentityMain/>
-    </>
-    // <View style={styles.container}>
-    //   <View style={{ height: 93 }}>
-    //     <StatBar screen="map" navigation={navigation} />
-    //   </View>
-    //   <Text>Hi from chat</Text>
-    //   <Text>Gender: {gender}</Text>
-    //   <Text>ethnicity: {ethnicity}</Text>
-    //   <Text>pronoun: {pronoun}</Text>
-    //   <Text>sexuality: {sexuality}</Text>
-    //   {users?.map((user) => {
-    //     return (
-    //       <TouchableOpacity
-    //         style={styles.userButton}
-    //         onPress={() => {
-    //           navigation.navigate("Conversation", {
-    //             userId: user,
-    //           });
-    //         }}
-    //         key={user}
-    //       >
-    //         <Ionicons
-    //           style={styles.userIcon}
-    //           name="ios-person-outline"
-    //           size={36}
-    //           color="lightgrey"
-    //         />
-    //         <Text style={styles.userName}> {user} </Text>
-    //         <Ionicons
-    //           style={styles.userCamera}
-    //           name="ios-camera-outline"
-    //           size={24}
-    //           color="lightgrey"
-    //         />
-    //       </TouchableOpacity>
-    //     );
-    //   })}
-    // </View>
+     <View style={styles.container}>
+      <View style={{ height: 93 }}>
+        <StatBar screen="map" navigation={navigation} />
+      </View>
+      <ImageBackground source={require("../../assets/chatBackground.png")} resizeMode="cover" style={styles.backGroundImage}>
+      </ImageBackground>     
+    </View>
+   
   );
 }
 
@@ -102,4 +69,8 @@ const styles = StyleSheet.create({
     right: 15,
     top: 10,
   },
+  backGroundImage:{
+    width:"100%",
+    height:"100%"
+  }
 });
