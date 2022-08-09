@@ -57,7 +57,7 @@ const ModalPoup = ({ visible, children }) => {
   );
 };
 
-export default function PronounCategory({ category, title, message }) {
+export default function PronounCategory({ category, title, navHandler }) {
   const scrollA = useRef(new Animated.Value(0)).current;
   const pronoun = useSelector((state) => state.identity.pronoun);
   const [visible, setVisible] = React.useState(false);

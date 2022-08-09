@@ -58,7 +58,7 @@ const ModalPoup = ({ visible, children }) => {
   );
 };
 
-export default function SexualityCategory({ category, title, message }) {
+export default function SexualityCategory({ category, title, navHandler }) {
   const scrollA = useRef(new Animated.Value(0)).current;
   const sexuality = useSelector((state) => state.identity.sexuality);
   const [visible, setVisible] = React.useState(false);

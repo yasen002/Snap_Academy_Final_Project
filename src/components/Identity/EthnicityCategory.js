@@ -58,7 +58,7 @@ const ModalPoup = ({ visible, children }) => {
   );
 };
 
-export default function EthnicityCategory({ category, title, message }) {
+export default function EthnicityCategory({ category, title, navHandler }) {
   const scrollA = useRef(new Animated.Value(0)).current;
   const ethnicity = useSelector((state) => state.identity.ethnicity);
   const [visible, setVisible] = React.useState(false);
