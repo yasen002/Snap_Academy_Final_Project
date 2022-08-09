@@ -7,11 +7,17 @@ import {
   Button,
   ScrollView,
 } from "react-native";
-export default function FriendIdentity() {
+export default function FriendIdentity({
+  name,
+  pronouns,
+  ethnicity,
+  gender,
+  sexuality,
+}) {
   return (
     // <ScrollView>
     <View style={styles.rectangle}>
-      <Text>Name</Text>
+      <Text>{name}</Text>
       <View
         style={{
           display: "flex",
@@ -35,11 +41,11 @@ export default function FriendIdentity() {
               borderRadius={50}
               marginBottom={10}
             >
-              <Button title="x" />
+              <Button title={pronouns} color="white" />
             </View>
 
             <View backgroundColor="#3d66a2" borderRadius={50}>
-              <Button title="x" />
+              <Button title={gender} color="white" />
             </View>
           </View>
         </View>
@@ -52,11 +58,11 @@ export default function FriendIdentity() {
               marginBottom={10}
               style={styles.shadow}
             >
-              <Button title="x" />
+              <Button title={ethnicity} />
             </View>
 
             <View backgroundColor="#f39cbc" borderRadius={50}>
-              <Button title="x" />
+              <Button title={sexuality} color="white" />
             </View>
           </View>
         </View>
